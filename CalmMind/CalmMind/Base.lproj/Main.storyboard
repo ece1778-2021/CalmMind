@@ -1,24 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1X2-TR-7ea">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Player-->
+        <scene sceneID="8QI-Er-DQ3">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="kcx-gX-dFh" customClass="MusicPlayerViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dw1-Ys-6qe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="good_view" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-da-ZnQ">
+                                <rect key="frame" x="57" y="692" width="300" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-rV-mlb">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="FJc-bQ-bmi"/>
+                                        </constraints>
+                                        <state key="normal" image="play-pause"/>
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="tHe-ME-4KJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T87-FA-zlw">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="VZD-fh-8c9"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="28" minY="25" maxX="28" maxY="25"/>
+                                        <state key="normal" image="restart "/>
+                                        <connections>
+                                            <action selector="restartButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="uZm-17-U88"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="AAp-Y2-bfA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CA0-Fg-XT1"/>
+                        <color key="backgroundColor" red="0.81536437441721743" green="1" blue="0.99631736126276182" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="MBM-da-ZnQ" firstAttribute="top" secondItem="fil-OK-hlD" secondAttribute="bottom" constant="20" id="7Y2-hZ-ovf"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="top" secondItem="Dw1-Ys-6qe" secondAttribute="top" id="FvX-zH-e9d"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="trailing" secondItem="CA0-Fg-XT1" secondAttribute="trailing" id="aks-UD-Rn6"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="leading" secondItem="CA0-Fg-XT1" secondAttribute="leading" id="bib-4m-ahQ"/>
+                            <constraint firstItem="MBM-da-ZnQ" firstAttribute="centerX" secondItem="Dw1-Ys-6qe" secondAttribute="centerX" id="gZR-Qe-hCg"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.75" id="wUI-yK-lPe"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Player" image="music" id="zzE-xj-PjG">
+                        <inset key="imageInsets" minX="8" minY="18" maxX="8" maxY="18"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="playButton" destination="rbY-rV-mlb" id="XYP-Nr-RQo"/>
+                        <outlet property="restartButton" destination="T87-FA-zlw" id="QWZ-XL-RN8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9HA-rI-xJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-481.15942028985512" y="265.84821428571428"/>
+        </scene>
+        <!--Heart rate-->
+        <scene sceneID="zSx-UY-IQS">
+            <objects>
+                <viewController id="hKA-DO-17U" customClass="ViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cb-p4-JxI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="suo-1h-KVP">
+                                <rect key="frame" x="132" y="353" width="150" height="190.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HEART RATE" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-hQ-tyK">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="0bK-IS-hbO"/>
+                                            <constraint firstAttribute="width" constant="150" id="cPq-kJ-14Z"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYm-KE-ltw">
+                                        <rect key="frame" x="0.0" y="157" width="150" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vbi-Sk-bKt"/>
+                        <color key="backgroundColor" red="1" green="0.89606964008921486" blue="0.96368488453639956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="suo-1h-KVP" firstAttribute="centerY" secondItem="6cb-p4-JxI" secondAttribute="centerY" id="Mlu-ox-anC"/>
+                            <constraint firstItem="suo-1h-KVP" firstAttribute="centerX" secondItem="6cb-p4-JxI" secondAttribute="centerX" id="syu-vi-1Nk"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Heart rate" image="heart" selectedImage="heart" id="dTz-qd-Bcy">
+                        <inset key="imageInsets" minX="8" minY="18" maxX="8" maxY="20"/>
+                        <inset key="landscapeImageInsets" minX="8" minY="0.0" maxX="8" maxY="8"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="heartLogo" destination="FVv-hQ-tyK" id="lZN-Gu-4QR"/>
+                        <outlet property="heartRateLabel" destination="LYm-KE-ltw" id="evK-Kw-CEb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwC-Ys-C0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-479.71014492753625" y="-399.10714285714283"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FT7-fW-hNF">
+            <objects>
+                <tabBarController id="1X2-TR-7ea" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j2s-xR-KBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hKA-DO-17U" kind="relationship" relationship="viewControllers" id="3RE-2w-iVV"/>
+                        <segue destination="kcx-gX-dFh" kind="relationship" relationship="viewControllers" id="Rjg-a8-b5S"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezv-ce-2yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1370" y="-95"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HEART RATE" width="66.5" height="66.5"/>
+        <image name="good_view" width="166.5" height="250"/>
+        <image name="heart" width="66.5" height="66.5"/>
+        <image name="music" width="66.5" height="66.5"/>
+        <image name="play-pause" width="66.5" height="66.5"/>
+        <image name="restart " width="66.5" height="66.5"/>
+    </resources>
 </document>
