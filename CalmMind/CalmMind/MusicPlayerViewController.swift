@@ -22,12 +22,8 @@ class MusicPlayerViewController: UIViewController {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "song1", ofType: "mp3")!))
             audioPlayer.prepareToPlay()
-            
-//            var audioSession = AVAudioSession.sharedInstance()
-//
-//            do {
-//                try audioSession.setCategory(AVAudioSessionCategotyPlayback)
-//            }
+            // Repeating the list for 20 times by default
+            audioPlayer.numberOfLoops = 20
         }
         catch {
             print(error)
@@ -63,6 +59,7 @@ class MusicPlayerViewController: UIViewController {
         }
     }
     
+    // Animate the button when the user clicks on it
     func animateClickButton(click_button: UIButton) {
         UIView.animate(withDuration: 0.2, animations: {
             click_button.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
