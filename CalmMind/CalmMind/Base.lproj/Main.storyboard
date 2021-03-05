@@ -17,44 +17,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="good_view" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="627"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galaxy" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-da-ZnQ">
-                                <rect key="frame" x="32" y="647" width="350" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-da-ZnQ">
+                                <rect key="frame" x="62" y="654" width="290" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T87-FA-zlw">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="VZD-fh-8c9"/>
+                                            <constraint firstAttribute="width" constant="50" id="VZD-fh-8c9"/>
                                         </constraints>
-                                        <inset key="contentEdgeInsets" minX="28" minY="25" maxX="28" maxY="25"/>
-                                        <state key="normal" image="restart "/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="28" maxX="0.0" maxY="28"/>
+                                        <state key="normal" image="restart" catalog="system">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="restartButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="uZm-17-U88"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-rV-mlb">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="100"/>
+                                        <rect key="frame" x="90" y="0.0" width="50" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="FJc-bQ-bmi"/>
+                                            <constraint firstAttribute="width" constant="50" id="FJc-bQ-bmi"/>
                                         </constraints>
-                                        <state key="normal" image="play-pause"/>
+                                        <state key="normal" image="playpause" catalog="system"/>
                                         <connections>
                                             <action selector="playButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="tHe-ME-4KJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJc-Og-spz">
-                                        <rect key="frame" x="300" y="0.0" width="50" height="100"/>
+                                        <rect key="frame" x="180" y="0.0" width="50" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="p7e-jt-evx"/>
                                         </constraints>
                                         <state key="normal">
-                                            <imageReference key="image" image="arrow.right" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="arrow.right.square.fill" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                         </state>
                                         <connections>
                                             <action selector="nextButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="0F2-JE-kxE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR4-X2-72R">
+                                        <rect key="frame" x="270" y="0.0" width="20" height="100"/>
+                                        <state key="normal" image="timer" catalog="system"/>
+                                        <connections>
+                                            <action selector="setTimerAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="Zhj-A8-YAC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -77,14 +86,14 @@
                         <viewLayoutGuide key="safeArea" id="CA0-Fg-XT1"/>
                         <color key="backgroundColor" red="0.81536437441721743" green="1" blue="0.99631736126276182" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="MBM-da-ZnQ" firstAttribute="top" secondItem="fil-OK-hlD" secondAttribute="bottom" constant="20" id="7Y2-hZ-ovf"/>
+                            <constraint firstItem="MBM-da-ZnQ" firstAttribute="top" secondItem="fil-OK-hlD" secondAttribute="bottom" id="7Y2-hZ-ovf"/>
                             <constraint firstItem="fil-OK-hlD" firstAttribute="top" secondItem="Dw1-Ys-6qe" secondAttribute="top" id="FvX-zH-e9d"/>
                             <constraint firstItem="6Cr-i9-7Vd" firstAttribute="leading" secondItem="CA0-Fg-XT1" secondAttribute="leading" id="P4Y-4W-JU1"/>
                             <constraint firstItem="fil-OK-hlD" firstAttribute="trailing" secondItem="CA0-Fg-XT1" secondAttribute="trailing" id="aks-UD-Rn6"/>
                             <constraint firstItem="fil-OK-hlD" firstAttribute="leading" secondItem="CA0-Fg-XT1" secondAttribute="leading" id="bib-4m-ahQ"/>
                             <constraint firstItem="MBM-da-ZnQ" firstAttribute="centerX" secondItem="Dw1-Ys-6qe" secondAttribute="centerX" id="gZR-Qe-hCg"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="trailing" secondItem="6Cr-i9-7Vd" secondAttribute="trailing" id="hCH-lB-IAx"/>
-                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.7" id="wUI-yK-lPe"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.73" id="wUI-yK-lPe"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="bottom" secondItem="6Cr-i9-7Vd" secondAttribute="bottom" id="xnw-By-lNK"/>
                         </constraints>
                     </view>
@@ -92,9 +101,11 @@
                         <inset key="imageInsets" minX="8" minY="18" maxX="8" maxY="18"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="goodview" destination="fil-OK-hlD" id="QpI-qi-mUR"/>
                         <outlet property="nextButton" destination="nJc-Og-spz" id="0n4-Ya-aQU"/>
                         <outlet property="playButton" destination="rbY-rV-mlb" id="XYP-Nr-RQo"/>
                         <outlet property="restartButton" destination="T87-FA-zlw" id="QWZ-XL-RN8"/>
+                        <outlet property="timerButton" destination="uR4-X2-72R" id="6IP-qg-IRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9HA-rI-xJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -211,12 +222,16 @@
     </scenes>
     <resources>
         <image name="HEART RATE" width="66.5" height="66.5"/>
-        <image name="arrow.right" catalog="system" width="128" height="98"/>
-        <image name="good_view" width="166.5" height="250"/>
+        <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
+        <image name="galaxy" width="500" height="1000"/>
         <image name="heart" width="66.5" height="66.5"/>
         <image name="music" width="66.5" height="66.5"/>
-        <image name="play-pause" width="66.5" height="66.5"/>
-        <image name="restart " width="66.5" height="66.5"/>
+        <image name="playpause" catalog="system" width="128" height="80"/>
+        <image name="restart" catalog="system" width="120" height="128"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

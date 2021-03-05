@@ -14,9 +14,13 @@ class MusicPlayerViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var currentSong: String!
     var songList = ["song1", "song2", "song3"]
+    var imageList = ["galaxy", "sunset", "river"]
+    var timer = Timer()
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var timerButton: UIButton!
+    @IBOutlet weak var goodview: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,12 @@ class MusicPlayerViewController: UIViewController {
     
     func playBackgroundMusic(filename: String) {
         do {
+//            let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!)
+//            let songData = try NSData(contentsOf: songURL, options: NSData.ReadingOptions.mappedIfSafe)
+//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+//            try AVAudioSession.sharedInstance().setActive(true)
+//            audioPlayer = try AVAudioPlayer(data: songData as Data)
+            
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
             audioPlayer.prepareToPlay()
             // Repeating the list for 20 times by default
@@ -50,6 +60,20 @@ class MusicPlayerViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func creatTimer(duration: Double) {
+        timer = Timer.scheduledTimer(
+            timeInterval: duration,
+            target: self,
+            selector: #selector(fireTimer),
+            userInfo: nil,
+            repeats: false
+        )
+    }
+    
+    @objc func fireTimer() {
+        audioPlayer.stop()
     }
     
     @IBAction func playButtonAction(_ sender: Any) {
@@ -84,9 +108,16 @@ class MusicPlayerViewController: UIViewController {
         let indexOfSong = songList.firstIndex(of: currentSong)
         let nextSongIndex = (indexOfSong! + 1) % songList.count
         let nextSong = songList[nextSongIndex]
+        
+        animateChangeImageView(songName: nextSong)
         playBackgroundMusic(filename: nextSong)
         audioPlayer.play()
+    }
+    
+    @IBAction func setTimerAction(_ sender: Any) {
+        animateClickButton(click_button: self.timerButton)
         
+        creatTimer(duration: 5)
         
     }
     
@@ -98,6 +129,23 @@ class MusicPlayerViewController: UIViewController {
         completion: { done in
             if done {
                 click_button.transform = CGAffineTransform.identity
+            }
+        })
+    }
+    
+    // Animate the image view when the user changes song
+    func animateChangeImageView(songName: String) {
+        
+        let indexOfSong = songList.firstIndex(of: songName)
+        let nextSongIndex = (indexOfSong! + 1) % songList.count
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.goodview.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        },
+        completion: { done in
+            if done {
+                self.goodview.image = UIImage(named: self.imageList[nextSongIndex])
+                self.goodview.transform = CGAffineTransform.identity
             }
         })
     }
@@ -116,6 +164,7 @@ extension MusicPlayerViewController: ChangeSongDelegate {
         self.dismiss(animated: true) {
             print("came back!")
             self.playBackgroundMusic(filename: songName)
+            self.animateChangeImageView(songName: songName)
             self.audioPlayer.play()
         }
     }
