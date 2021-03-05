@@ -31,12 +31,6 @@ class MusicPlayerViewController: UIViewController {
     
     func playBackgroundMusic(filename: String) {
         do {
-//            let songURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!)
-//            let songData = try NSData(contentsOf: songURL, options: NSData.ReadingOptions.mappedIfSafe)
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//            audioPlayer = try AVAudioPlayer(data: songData as Data)
-            
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
             audioPlayer.prepareToPlay()
             // Repeating the list for 20 times by default
@@ -47,7 +41,7 @@ class MusicPlayerViewController: UIViewController {
             print(error)
         }
         
-        // Setting of playing in the background
+        // Setting of playing in the background when the screen is locked
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
             print("Playback OK")
@@ -62,6 +56,15 @@ class MusicPlayerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // Alert message helper function
+    func sendAlert(alertMsg: String) {
+        let alertController = UIAlertController(title: "Kind reminds", message: alertMsg, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    // Set timer for excuting fireTimer() function
     func creatTimer(duration: Double) {
         timer = Timer.scheduledTimer(
             timeInterval: duration,
@@ -72,8 +75,10 @@ class MusicPlayerViewController: UIViewController {
         )
     }
     
+    // Execute the commands when time is up
     @objc func fireTimer() {
         audioPlayer.stop()
+        sendAlert(alertMsg: "Time's up, music has stopped..")
     }
     
     @IBAction func playButtonAction(_ sender: Any) {
