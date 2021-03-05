@@ -12,20 +12,38 @@ import AVFoundation
 class MusicPlayerViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
+    var currentSong: String!
+    var songList = ["song1", "song2", "song3"]
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        playBackgroundMusic(filename: "song1")
+    }
+    
+    func playBackgroundMusic(filename: String) {
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "song1", ofType: "mp3")!))
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
             audioPlayer.prepareToPlay()
             // Repeating the list for 20 times by default
             audioPlayer.numberOfLoops = 20
+            currentSong = filename
         }
         catch {
+            print(error)
+        }
+        
+        // Setting of playing in the background
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
+        } catch {
             print(error)
         }
     }
@@ -59,6 +77,19 @@ class MusicPlayerViewController: UIViewController {
         }
     }
     
+    @IBAction func nextButtonAction(_ sender: Any) {
+        
+        animateClickButton(click_button: self.nextButton)
+        
+        let indexOfSong = songList.firstIndex(of: currentSong)
+        let nextSongIndex = (indexOfSong! + 1) % songList.count
+        let nextSong = songList[nextSongIndex]
+        playBackgroundMusic(filename: nextSong)
+        audioPlayer.play()
+        
+        
+    }
+    
     // Animate the button when the user clicks on it
     func animateClickButton(click_button: UIButton) {
         UIView.animate(withDuration: 0.2, animations: {
@@ -70,4 +101,23 @@ class MusicPlayerViewController: UIViewController {
             }
         })
     }
+    
+    @IBAction func musicLibraryAction() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MLvc") as! MusicLibraryViewController
+        controller.delegate = self
+        self.present(controller, animated: true, completion: nil)
+    }
+}
+
+extension MusicPlayerViewController: ChangeSongDelegate {
+    
+    func changeSong(songName: String) {
+        self.dismiss(animated: true) {
+            print("came back!")
+            self.playBackgroundMusic(filename: songName)
+            self.audioPlayer.play()
+        }
+    }
+    
 }

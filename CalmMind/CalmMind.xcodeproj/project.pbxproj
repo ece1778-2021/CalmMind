@@ -18,6 +18,9 @@
 		8538B97225EFC69E00301316 /* song2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538B97025EFC69E00301316 /* song2.mp3 */; };
 		8538B97325EFC69E00301316 /* song3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8538B97125EFC69E00301316 /* song3.mp3 */; };
 		856CC9DB25EE9E8600171D57 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856CC9DA25EE9E8600171D57 /* HealthKit.framework */; };
+		8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */; };
+		8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */; };
+		8585D8F425F155990038F2FF /* MusicLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8F325F155990038F2FF /* MusicLibraryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		8538B97125EFC69E00301316 /* song3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = song3.mp3; path = ../../../song3.mp3; sourceTree = "<group>"; };
 		856CC9D825EE9E8600171D57 /* CalmMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalmMind.entitlements; sourceTree = "<group>"; };
 		856CC9DA25EE9E8600171D57 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		8585D8F325F155990038F2FF /* MusicLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +81,13 @@
 				1ECC236C25E6CAE0000B620D /* SceneDelegate.swift */,
 				1ECC236E25E6CAE0000B620D /* ViewController.swift */,
 				8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */,
+				8585D8F325F155990038F2FF /* MusicLibraryViewController.swift */,
 				1ECC237025E6CAE0000B620D /* Main.storyboard */,
 				1ECC237325E6CAE4000B620D /* Assets.xcassets */,
 				1ECC237525E6CAE4000B620D /* LaunchScreen.storyboard */,
 				1ECC237825E6CAE4000B620D /* Info.plist */,
+				8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */,
+				8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */,
 			);
 			path = CalmMind;
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 				1ECC237425E6CAE4000B620D /* Assets.xcassets in Resources */,
 				1ECC237225E6CAE0000B620D /* Main.storyboard in Resources */,
 				8538B96D25EFC48C00301316 /* song1.mp3 in Resources */,
+				8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */,
 				8538B97225EFC69E00301316 /* song2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8585D8F425F155990038F2FF /* MusicLibraryViewController.swift in Sources */,
 				1ECC236F25E6CAE0000B620D /* ViewController.swift in Sources */,
 				1ECC236B25E6CAE0000B620D /* AppDelegate.swift in Sources */,
 				1ECC236D25E6CAE0000B620D /* SceneDelegate.swift in Sources */,
+				8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */,
 				8538B96925EFC2E500301316 /* MusicPlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
