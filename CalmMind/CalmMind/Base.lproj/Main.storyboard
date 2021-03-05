@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galaxy" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-da-ZnQ">
@@ -223,11 +223,11 @@
     <resources>
         <image name="HEART RATE" width="66.5" height="66.5"/>
         <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
-        <image name="galaxy" width="500" height="1000"/>
         <image name="heart" width="66.5" height="66.5"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="playpause" catalog="system" width="128" height="80"/>
         <image name="restart" catalog="system" width="120" height="128"/>
+        <image name="sunset" width="166.5" height="250"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
