@@ -121,12 +121,8 @@ class MusicPlayerViewController: UIViewController {
     
     @IBAction func setTimerAction(_ sender: Any) {
         animateClickButton(click_button: self.timerButton)
-        if audioPlayer.isPlaying {
-            sendAlert(alertMsg: "Timer set for 5s")
-            creatTimer(duration: 5)
-        } else {
-            sendAlert(alertMsg: "Music is not playing")
-        }
+        
+        creatTimer(duration: 5)
         
     }
     
