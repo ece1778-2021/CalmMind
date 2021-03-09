@@ -22,23 +22,37 @@
                             <constraint firstAttribute="width" constant="100" id="xP0-xu-TUS"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-tx-oGD">
-                        <rect key="frame" x="110" y="36" width="108" height="27"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uk8-fk-0q2">
+                        <rect key="frame" x="100" y="0.0" width="329" height="99"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-tx-oGD">
+                                <rect key="frame" x="0.0" y="0.0" width="329" height="78.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-i5-Ty1">
+                                <rect key="frame" x="0.0" y="78.5" width="329" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ybG-tx-oGD" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="10" id="Ogj-we-eTe"/>
+                    <constraint firstItem="uk8-fk-0q2" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" id="NwG-5q-4sl"/>
                     <constraint firstItem="Yh5-6T-pXd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QfB-hN-yPf"/>
-                    <constraint firstItem="ybG-tx-oGD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dhD-la-EGv"/>
+                    <constraint firstItem="uk8-fk-0q2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QqH-wF-1M6"/>
+                    <constraint firstAttribute="trailing" secondItem="uk8-fk-0q2" secondAttribute="trailing" id="kQE-Vg-2G7"/>
                     <constraint firstAttribute="bottom" secondItem="Yh5-6T-pXd" secondAttribute="bottom" id="ow2-Qq-0qe"/>
+                    <constraint firstAttribute="bottom" secondItem="uk8-fk-0q2" secondAttribute="bottom" id="sjT-wO-3Gk"/>
                     <constraint firstItem="Yh5-6T-pXd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ssU-4z-6vW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bpmLabel" destination="Rdf-i5-Ty1" id="bWe-ur-gdI"/>
                 <outlet property="imageview" destination="Yh5-6T-pXd" id="BQR-kb-qVr"/>
                 <outlet property="songnameLabel" destination="ybG-tx-oGD" id="Ivb-SN-ZfL"/>
             </connections>

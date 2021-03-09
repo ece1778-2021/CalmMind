@@ -22,13 +22,12 @@ class ViewController: UIViewController {
         
         // Authorizing for the HealthKit
         authorizeHealthkit()
-        
         // Parse heart rate
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
         queue.async {
             while true {
                 self.updateHr()
-                sleep(3)
+                sleep(30)
             }
         }
         
@@ -80,6 +79,14 @@ class ViewController: UIViewController {
         }
     }
     
+    // Alert message helper function
+    func sendAlert(alertMsg: String) {
+        let alertController = UIAlertController(title: "Error", message: alertMsg, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // Parsing the latest heart rate from HealthKit
     func getLatestHeartRate() {
         
@@ -97,6 +104,10 @@ class ViewController: UIViewController {
                 return
             }
             
+            // If no bpm recorded
+            if result?.count == 0 {
+                self.sendAlert(alertMsg: "No heart rate recorded in Health App")
+            }
             let data = result![0] as! HKQuantitySample
             let unit = HKUnit(from: "count/min")
             let latestHr = data.quantity.doubleValue(for: unit)

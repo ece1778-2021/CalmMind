@@ -11,6 +11,7 @@ class MyTableViewCell: UITableViewCell {
     
     @IBOutlet var imageview: UIImageView!
     @IBOutlet var songnameLabel: UILabel!
+    @IBOutlet var bpmLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

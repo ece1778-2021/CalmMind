@@ -15,6 +15,7 @@ class MusicLibraryViewController: UIViewController {
     
     @IBOutlet var mytableView: UITableView!
     var songList = ["song1", "song2", "song3"]
+    var bpmList = ["80", "70", "60"]
     var delegate: ChangeSongDelegate?
     
     override func viewDidLoad() {
@@ -54,6 +55,8 @@ extension MusicLibraryViewController: UITableViewDataSource {
 //        cell.imageview =
         cell.songnameLabel.text = songList[indexPath.row]
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
+        cell.bpmLabel.text = bpmList[indexPath.row] + " BPM"
+        cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
         return cell
         
     }
