@@ -14,7 +14,7 @@ protocol ChangeSongDelegate {
 class MusicLibraryViewController: UIViewController {
     
     @IBOutlet var mytableView: UITableView!
-    var songList = ["song1", "song2", "song3"]
+    var songList = ["Music 1", "Music 2", "Music 3"]
     var bpmList = ["80", "70", "60"]
     var delegate: ChangeSongDelegate?
     
@@ -53,7 +53,7 @@ extension MusicLibraryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         // ???
 //        cell.imageview =
-        cell.songnameLabel.text = "Music " + songList[indexPath.row]
+        cell.songnameLabel.text = songList[indexPath.row]
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
         cell.bpmLabel.text = bpmList[indexPath.row] + " BPM"
         cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)

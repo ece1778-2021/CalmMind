@@ -13,7 +13,7 @@ class MusicPlayerViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var currentSong: String!
-    var songList = ["song1", "song2", "song3"]
+    var songList = ["Music 1", "Music 2", "Music 3"]
     var imageList = ["galaxy", "sunset", "river"]
     var timer = Timer()
     var initial_hr = 0
@@ -29,7 +29,7 @@ class MusicPlayerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        chooseBackgroundMusic(filename: "song1")
+        chooseBackgroundMusic(filename: "Music 1")
     }
     
     func chooseBackgroundMusic(filename: String) {
