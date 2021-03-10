@@ -16,6 +16,9 @@ class MusicPlayerViewController: UIViewController {
     var songList = ["song1", "song2", "song3"]
     var imageList = ["galaxy", "sunset", "river"]
     var timer = Timer()
+    var initial_hr = 0
+    var countdown = 10
+    @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -26,15 +29,18 @@ class MusicPlayerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        playBackgroundMusic(filename: "song1")
+        chooseBackgroundMusic(filename: "song1")
     }
     
-    func playBackgroundMusic(filename: String) {
+    func chooseBackgroundMusic(filename: String) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
             audioPlayer.prepareToPlay()
             // Repeating the list for 20 times by default
             audioPlayer.numberOfLoops = 20
+            audioPlayer.enableRate = true
+            audioPlayer.rate = 1
+            audioPlayer.volume = 0.2
             currentSong = filename
         }
         catch {
@@ -115,20 +121,90 @@ class MusicPlayerViewController: UIViewController {
         let nextSong = songList[nextSongIndex]
         
         animateChangeImageView(songName: nextSong)
-        playBackgroundMusic(filename: nextSong)
+        chooseBackgroundMusic(filename: nextSong)
         audioPlayer.play()
+    }
+    
+    func setTimerAction(action: UIAlertAction) {
+        var duration = 0.0
+        
+        if action.title! == "5 seconds" {
+            duration = 5
+        } else if action.title! == "10 minutes" {
+            duration = 600
+        } else if action.title! == "20 minutes" {
+            duration = 1200
+        } else if action.title! == "30 minutes" {
+            duration = 1800
+        } else if action.title! == "60 minutes" {
+            duration = 3600
+        } else {
+            print("error")
+            return
+        }
+        
+        if audioPlayer.isPlaying {
+            creatTimer(duration: duration)
+            
+            countDownLabel.isHidden = false
+            countdown = Int(duration)
+            countDownLabel.text = "Music stops in " + String(countdown) + " seconds"
+            
+            // Set up the count down
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+                if self.countdown > 0 {
+                    self.countdown -= 1
+                    self.countDownLabel.text = "Music stops in " + String(self.countdown) + " seconds"
+                } else {
+                    Timer.invalidate()
+                    self.countDownLabel.isHidden = true
+                }
+            }
+        } else {
+            sendAlert(alertMsg: "Music is not playing")
+        }
     }
     
     @IBAction func setTimerAction(_ sender: Any) {
         animateClickButton(click_button: self.timerButton)
         
-        if audioPlayer.isPlaying {
-            sendAlert(alertMsg: "Timer set for 5s")
-            creatTimer(duration: 5)
-        } else {
-            sendAlert(alertMsg: "Music is not playing")
-        }
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: "5 seconds", style: .default, handler: setTimerAction))
+        alert.addAction(UIAlertAction(title: "10 minutes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "20 minutes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "30 minutes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "60 minutes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        present(alert, animated: true)
         
+        
+//        let alert = UIAlertController(title: "Set Timer", message: "Choose time to stop music.", preferredStyle: .actionSheet)
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "5s"), style: .default, handler: { _ in
+//            self.setTimerAction(5)
+//            NSLog("The \"OK\" alert occured.")
+//        }))
+//        alert.addAction(UIAlertAction(title: NSLocalizedString("no ok", comment: "10min"), style: .default, handler: { _ in
+//            self.setTimerAction(600)
+//            NSLog("The \"OK\" alert occured.")
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+        
+//        let alertController = UIAlertController(title: "Question", message: "Will India ever win a FIFA World Cup?", preferredStyle: .actionSheet)
+//
+//        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+//            self.setTimerAction(5)
+//        })
+//
+//        let noAction = UIAlertAction(title: "No", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+//            print("No")
+//        })
+//
+//        alertController.addAction(yesAction)
+//        alertController.addAction(noAction)
+//
+//        self.present(alertController, animated: true, completion: nil)
     }
     
     // Animate the button when the user clicks on it
@@ -173,7 +249,7 @@ extension MusicPlayerViewController: ChangeSongDelegate {
     func changeSong(songName: String) {
         self.dismiss(animated: true) {
             print("came back!")
-            self.playBackgroundMusic(filename: songName)
+            self.chooseBackgroundMusic(filename: songName)
             self.animateChangeImageView(songName: songName)
             self.audioPlayer.play()
         }

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         queue.async {
             while true {
                 self.updateHr()
-                sleep(30)
+                sleep(2)
             }
         }
         
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 if self.latestHeartRate != 0 {
                     if self.lastHeartRate == self.latestHeartRate{
-                        let randomNum = Int(arc4random_uniform(5))
+                        let randomNum = Int(arc4random_uniform(0))
                         self.heartRateLabel.text = String(self.latestHeartRate + randomNum)
                     } else {
                         self.heartRateLabel.text = String(self.latestHeartRate)
