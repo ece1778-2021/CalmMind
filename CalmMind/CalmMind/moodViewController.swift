@@ -7,13 +7,8 @@
 
 import UIKit
 
-//protocol UpdateMoodDelegate {
-//    func UpdateMood(currentMoodIndex: Int)
-//}
-
 class moodViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-//    var delegate: UpdateMoodDelegate?
     let reuseIdentifier = "cell"
     let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
     let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
@@ -57,9 +52,7 @@ class moodViewController: UIViewController, UICollectionViewDataSource, UICollec
         // handle tap events
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-//        mainTabBarController.
         mainTabBarController.modalPresentationStyle = .fullScreen
-//        self.delegate?.UpdateMood(currentMoodIndex: indexPath.row)
         self.present(mainTabBarController, animated: true, completion: nil)
     }
     
