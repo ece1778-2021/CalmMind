@@ -15,6 +15,8 @@
 		1ECC237725E6CAE4000B620D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC237525E6CAE4000B620D /* LaunchScreen.storyboard */; };
 		851A34172602717C0033578A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A34162602717C0033578A /* BaseTabBarController.swift */; };
 		8538B96925EFC2E500301316 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */; };
+		853E0A1C26051F4700D2A1F1 /* moodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E0A1B26051F4700D2A1F1 /* moodViewController.swift */; };
+		853E0A252605257D00D2A1F1 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */; };
 		856CC9DB25EE9E8600171D57 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856CC9DA25EE9E8600171D57 /* HealthKit.framework */; };
 		8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */; };
 		8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */; };
@@ -35,6 +37,8 @@
 		1ECC237825E6CAE4000B620D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851A34162602717C0033578A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		853E0A1B26051F4700D2A1F1 /* moodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodViewController.swift; sourceTree = "<group>"; };
+		853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
 		856CC9D825EE9E8600171D57 /* CalmMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalmMind.entitlements; sourceTree = "<group>"; };
 		856CC9DA25EE9E8600171D57 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 				856CC9D825EE9E8600171D57 /* CalmMind.entitlements */,
 				1ECC236A25E6CAE0000B620D /* AppDelegate.swift */,
 				1ECC236C25E6CAE0000B620D /* SceneDelegate.swift */,
+				853E0A1B26051F4700D2A1F1 /* moodViewController.swift */,
 				1ECC236E25E6CAE0000B620D /* ViewController.swift */,
 				8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */,
 				8585D8F325F155990038F2FF /* MusicLibraryViewController.swift */,
@@ -91,6 +96,7 @@
 				8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */,
 				8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */,
 				851A34162602717C0033578A /* BaseTabBarController.swift */,
+				853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */,
 			);
 			path = CalmMind;
 			sourceTree = "<group>";
@@ -188,10 +194,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				851A34172602717C0033578A /* BaseTabBarController.swift in Sources */,
+				853E0A1C26051F4700D2A1F1 /* moodViewController.swift in Sources */,
 				8585D8F425F155990038F2FF /* MusicLibraryViewController.swift in Sources */,
 				1ECC236F25E6CAE0000B620D /* ViewController.swift in Sources */,
 				1ECC236B25E6CAE0000B620D /* AppDelegate.swift in Sources */,
 				1ECC236D25E6CAE0000B620D /* SceneDelegate.swift in Sources */,
+				853E0A252605257D00D2A1F1 /* myCollectionViewCell.swift in Sources */,
 				8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */,
 				8538B96925EFC2E500301316 /* MusicPlayerViewController.swift in Sources */,
 			);

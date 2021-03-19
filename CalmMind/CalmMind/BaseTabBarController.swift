@@ -9,10 +9,7 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
     
-    var profilePageImageArray = [UIImage]()
-    var profilePostTimestampArray = [String]()
-    var feedPageImageArray = [UIImage]()
-    var feedPostTimestampArray = [String]()
+    var latestHeartRate : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
