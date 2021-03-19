@@ -13,6 +13,7 @@
 		1ECC237225E6CAE0000B620D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC237025E6CAE0000B620D /* Main.storyboard */; };
 		1ECC237425E6CAE4000B620D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC237325E6CAE4000B620D /* Assets.xcassets */; };
 		1ECC237725E6CAE4000B620D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC237525E6CAE4000B620D /* LaunchScreen.storyboard */; };
+		851A34172602717C0033578A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A34162602717C0033578A /* BaseTabBarController.swift */; };
 		8538B96925EFC2E500301316 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */; };
 		856CC9DB25EE9E8600171D57 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856CC9DA25EE9E8600171D57 /* HealthKit.framework */; };
 		8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */; };
@@ -32,6 +33,7 @@
 		1ECC237325E6CAE4000B620D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ECC237625E6CAE4000B620D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ECC237825E6CAE4000B620D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		851A34162602717C0033578A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		856CC9D825EE9E8600171D57 /* CalmMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalmMind.entitlements; sourceTree = "<group>"; };
 		856CC9DA25EE9E8600171D57 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -88,6 +90,7 @@
 				1ECC237825E6CAE4000B620D /* Info.plist */,
 				8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */,
 				8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */,
+				851A34162602717C0033578A /* BaseTabBarController.swift */,
 			);
 			path = CalmMind;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851A34172602717C0033578A /* BaseTabBarController.swift in Sources */,
 				8585D8F425F155990038F2FF /* MusicLibraryViewController.swift in Sources */,
 				1ECC236F25E6CAE0000B620D /* ViewController.swift in Sources */,
 				1ECC236B25E6CAE0000B620D /* AppDelegate.swift in Sources */,

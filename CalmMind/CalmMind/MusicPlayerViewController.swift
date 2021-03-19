@@ -13,7 +13,7 @@ class MusicPlayerViewController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var currentSong: String!
-    var songList = ["Music 1", "Music 2", "Music 3"]
+    var songList = ["Music 1", "Music 3", "Music 2"]
     var imageList = ["galaxy", "sunset", "river"]
     var timer = Timer()
     var initial_hr = 0
@@ -36,11 +36,12 @@ class MusicPlayerViewController: UIViewController {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
             audioPlayer.prepareToPlay()
+            
             // Repeating the list for 20 times by default
             audioPlayer.numberOfLoops = 20
             audioPlayer.enableRate = true
-            audioPlayer.rate = 1
-            audioPlayer.volume = 0.2
+            audioPlayer.rate = 2
+            audioPlayer.volume = 1
             currentSong = filename
         }
         catch {
@@ -64,7 +65,7 @@ class MusicPlayerViewController: UIViewController {
     
     // Alert message helper function
     func sendAlert(alertMsg: String) {
-        let alertController = UIAlertController(title: "Kind reminds", message: alertMsg, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Time is up", message: alertMsg, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)
@@ -84,7 +85,7 @@ class MusicPlayerViewController: UIViewController {
     // Execute the commands when time is up
     @objc func fireTimer() {
         audioPlayer.stop()
-        sendAlert(alertMsg: "Time's up, music has stopped..")
+        sendAlert(alertMsg: "Music has stopped..")
     }
     
     @IBAction func playButtonAction(_ sender: Any) {
@@ -148,7 +149,7 @@ class MusicPlayerViewController: UIViewController {
             
             countDownLabel.isHidden = false
             countdown = Int(duration)
-            countDownLabel.text = "Music stops in " + String(countdown) + " seconds"
+            countDownLabel.text = "Music will stop in " + String(countdown) + " seconds"
             
             // Set up the count down
             Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
