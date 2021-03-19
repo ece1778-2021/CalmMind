@@ -295,6 +295,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 02f9261... bug
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-Yh-eh6">
@@ -324,6 +325,8 @@
 >>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
 =======
 >>>>>>> parent of 02f9261... bug
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
 =======
 >>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
                         </subviews>
