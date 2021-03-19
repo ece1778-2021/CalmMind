@@ -8,9 +8,11 @@
 import UIKit
 import AVKit
 import AVFoundation
+import HealthKit
 
 class MusicPlayerViewController: UIViewController {
     
+    let healthStore = HKHealthStore()
     var audioPlayer = AVAudioPlayer()
     var currentSong: String!
     var songList = ["Music 1", "Music 3", "Music 2"]
@@ -18,18 +20,33 @@ class MusicPlayerViewController: UIViewController {
     var timer = Timer()
     var initial_hr = 0
     var countdown = 10
+    var latestHeartRate : Int = 0
     @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var timerButton: UIButton!
     @IBOutlet weak var goodview: UIImageView!
+    @IBOutlet var heartRateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         chooseBackgroundMusic(filename: "Music 1")
+        countDownLabel.text = "Calm down now..."
+        
+        let queue = DispatchQueue(label: "maintenance", qos: .utility)
+        queue.async {
+            while true {
+                self.updateHr()
+                sleep(2)
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateHr()
     }
     
     func chooseBackgroundMusic(filename: String) {
@@ -98,6 +115,7 @@ class MusicPlayerViewController: UIViewController {
         } else {
             audioPlayer.play()
             print("playing")
+            countDownLabel.text = "Calm down now..."
         }
     }
     
@@ -111,6 +129,7 @@ class MusicPlayerViewController: UIViewController {
         } else {
             audioPlayer.play()
         }
+        countDownLabel.text = "Calm down now..."
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
@@ -146,8 +165,7 @@ class MusicPlayerViewController: UIViewController {
         
         if audioPlayer.isPlaying {
             creatTimer(duration: duration)
-            
-            countDownLabel.isHidden = false
+
             countdown = Int(duration)
             countDownLabel.text = "Music will stop in " + String(countdown) + " seconds"
             
@@ -158,7 +176,7 @@ class MusicPlayerViewController: UIViewController {
                     self.countDownLabel.text = "Music stops in " + String(self.countdown) + " seconds"
                 } else {
                     Timer.invalidate()
-                    self.countDownLabel.isHidden = true
+                    self.countDownLabel.text = "Go to sleep now..."
                 }
             }
         } else {
@@ -243,6 +261,48 @@ class MusicPlayerViewController: UIViewController {
         controller.delegate = self
         self.present(controller, animated: true, completion: nil)
     }
+    
+    // Parsing the latest heart rate from HealthKit
+    func getLatestHeartRate() {
+        
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else {
+            return
+        }
+        
+        let startDate = Calendar.current.date(byAdding: .hour, value: -1, to: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
+            guard error == nil else {
+                return
+            }
+            
+            // If no bpm recorded
+            if result?.count == 0 {
+                self.sendAlert(alertMsg: "No heart rate recorded in Health App")
+            }
+            let data = result![0] as! HKQuantitySample
+            let unit = HKUnit(from: "count/min")
+            let latestHr = data.quantity.doubleValue(for: unit)
+            self.latestHeartRate = Int(latestHr)
+            
+        }
+        
+        healthStore.execute(query)
+    }
+    
+    func updateHr() {
+        let hrQueue = DispatchQueue(label: "Getting latest hr", attributes: .concurrent)
+        hrQueue.async {
+            self.getLatestHeartRate()
+            
+            DispatchQueue.main.async {
+                self.heartRateLabel.text = String(self.latestHeartRate)
+            }
+        }
+    }
 }
 
 extension MusicPlayerViewController: ChangeSongDelegate {
@@ -253,6 +313,7 @@ extension MusicPlayerViewController: ChangeSongDelegate {
             self.chooseBackgroundMusic(filename: songName)
             self.animateChangeImageView(songName: songName)
             self.audioPlayer.play()
+            self.countDownLabel.text = "Calm down now..."
         }
     }
     
