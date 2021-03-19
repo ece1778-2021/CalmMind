@@ -354,7 +354,7 @@
         <!--Heart rate-->
         <scene sceneID="zSx-UY-IQS">
             <objects>
-                <viewController id="hKA-DO-17U" customClass="ViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="heart_vc" id="hKA-DO-17U" customClass="ViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cb-p4-JxI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,7 +392,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angry-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ujt-gH-PKE">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ujt-gH-PKE">
                                         <rect key="frame" x="168" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="3OZ-11-9TW"/>
@@ -447,9 +447,9 @@
     </scenes>
     <resources>
         <image name="HEART RATE" width="66.5" height="66.5"/>
-        <image name="angry-icon" width="66.5" height="66.5"/>
         <image name="backward.frame" catalog="system" width="128" height="99"/>
         <image name="forward" catalog="system" width="128" height="79"/>
+        <image name="happy-icon" width="66.5" height="66.5"/>
         <image name="heart" width="66.5" height="66.5"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
