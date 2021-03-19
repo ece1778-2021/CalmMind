@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     let healthStore = HKHealthStore()
     @IBOutlet var heartLogo: UIImageView!
     @IBOutlet var heartRateLabel: UILabel!
-    @IBOutlet var moodLogo: UIImageView!
-    @IBOutlet var moodLabel: UILabel!
     var lastHeartRate : Int = 0
     var latestHeartRate : Int = 0
     let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
