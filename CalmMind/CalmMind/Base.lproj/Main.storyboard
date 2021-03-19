@@ -291,6 +291,7 @@
                                 </subviews>
                             </stackView>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-Yh-eh6">
                                 <rect key="frame" x="98" y="124" width="218" height="50"/>
                                 <subviews>
@@ -309,6 +310,8 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
 =======
 >>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
                         </subviews>
