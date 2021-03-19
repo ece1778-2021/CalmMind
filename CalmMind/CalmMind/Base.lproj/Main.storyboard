@@ -293,6 +293,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 02f9261... bug
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-Yh-eh6">
                                 <rect key="frame" x="98" y="124" width="218" height="50"/>
                                 <subviews>
@@ -313,10 +316,13 @@
                             </stackView>
 =======
 >>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+<<<<<<< HEAD
 =======
 >>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
 =======
 >>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+=======
+>>>>>>> parent of 02f9261... bug
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vbi-Sk-bKt"/>
                         <color key="backgroundColor" red="1" green="0.89606964008921486" blue="0.96368488453639956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
