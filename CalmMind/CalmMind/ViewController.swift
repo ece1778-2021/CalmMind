@@ -13,8 +13,12 @@ class ViewController: UIViewController {
     let healthStore = HKHealthStore()
     @IBOutlet var heartLogo: UIImageView!
     @IBOutlet var heartRateLabel: UILabel!
+    @IBOutlet var moodLogo: UIImageView!
+    @IBOutlet var moodLabel: UILabel!
     var lastHeartRate : Int = 0
     var latestHeartRate : Int = 0
+    let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
+    let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,13 @@ class ViewController: UIViewController {
         
         // Authorizing for the HealthKit
         authorizeHealthkit()
+        
+        // Display mood
+        // ??????
+        let tbc = self.tabBarController as! BaseTabBarController
+        moodLabel.text = moodArray[tbc.currentMoodIndex]
+        moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
+        
         // Parse heart rate
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
         queue.async {

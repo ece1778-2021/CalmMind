@@ -10,6 +10,7 @@ import UIKit
 class BaseTabBarController: UITabBarController {
     
     var latestHeartRate : Int = 0
+    var currentMoodIndex : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
