@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Display mood
         // ??????
         let tbc = self.tabBarController as! BaseTabBarController
-        moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " today"
+        moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " now"
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
         
         // Parse heart rate
@@ -53,6 +53,15 @@ class ViewController: UIViewController {
             animate_heart()
         }
         updateHr()
+    }
+    
+    @IBAction func changeMoodAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "mood_vc") as! moodViewController
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
+        
     }
     
     // Heart animation part1: Enlarge the heart image
@@ -140,9 +149,9 @@ class ViewController: UIViewController {
                 if self.latestHeartRate != 0 {
                     if self.lastHeartRate == self.latestHeartRate{
                         let randomNum = Int(arc4random_uniform(0))
-                        self.heartRateLabel.text = String(self.latestHeartRate + randomNum)
+                        self.heartRateLabel.text = String(self.latestHeartRate + randomNum) + " bpm"
                     } else {
-                        self.heartRateLabel.text = String(self.latestHeartRate)
+                        self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
                     }
                 }
             }
