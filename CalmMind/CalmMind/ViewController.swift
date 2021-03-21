@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Display mood
         // ??????
         let tbc = self.tabBarController as! BaseTabBarController
-        moodLabel.text = moodArray[tbc.currentMoodIndex]
+        moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " today"
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
         
         // Parse heart rate

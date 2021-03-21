@@ -50,10 +50,16 @@ class moodViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
+//        let tbc = self.tabBarController as! BaseTabBarController
+//        tbc.currentMoodIndex = indexPath.row
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController") as! BaseTabBarController
+        mainTabBarController.currentMoodIndex = indexPath.row
         mainTabBarController.modalPresentationStyle = .fullScreen
         self.present(mainTabBarController, animated: true, completion: nil)
+        
+        
     }
     
     

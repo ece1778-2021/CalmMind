@@ -354,7 +354,7 @@
         <!--Heart rate-->
         <scene sceneID="zSx-UY-IQS">
             <objects>
-                <viewController id="hKA-DO-17U" customClass="ViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="heart_vc" id="hKA-DO-17U" customClass="ViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6cb-p4-JxI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,32 +383,64 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-Yh-eh6">
-                                <rect key="frame" x="98" y="124" width="218" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fbW-Ra-R21">
+                                <rect key="frame" x="57" y="125.5" width="300" height="151"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are Happy today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-8a-4Rq">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceo-9j-MZV">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="LlM-F7-GfP"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angry-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ujt-gH-PKE">
-                                        <rect key="frame" x="168" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="20" width="300" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="3OZ-11-9TW"/>
                                             <constraint firstAttribute="height" constant="50" id="W8M-Fm-4hU"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You feel Happy today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-8a-4Rq">
+                                        <rect key="frame" x="0.0" y="80" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are some music for your mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M86-7s-WvX">
+                                        <rect key="frame" x="0.0" y="110.5" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j2-Ng-5tv">
+                                        <rect key="frame" x="0.0" y="141" width="300" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="HPU-Fz-WEC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="KeD-Hm-o6A"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vbi-Sk-bKt"/>
                         <color key="backgroundColor" red="1" green="0.89606964008921486" blue="0.96368488453639956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="m7P-Yh-eh6" firstAttribute="centerX" secondItem="6cb-p4-JxI" secondAttribute="centerX" id="74F-79-GNW"/>
                             <constraint firstItem="suo-1h-KVP" firstAttribute="centerY" secondItem="6cb-p4-JxI" secondAttribute="centerY" id="Mlu-ox-anC"/>
-                            <constraint firstItem="m7P-Yh-eh6" firstAttribute="top" secondItem="Vbi-Sk-bKt" secondAttribute="top" constant="80" id="Mmf-9u-raV"/>
+                            <constraint firstItem="suo-1h-KVP" firstAttribute="top" secondItem="fbW-Ra-R21" secondAttribute="bottom" constant="60" id="nQD-SU-BrY"/>
                             <constraint firstItem="suo-1h-KVP" firstAttribute="centerX" secondItem="6cb-p4-JxI" secondAttribute="centerX" id="syu-vi-1Nk"/>
+                            <constraint firstItem="fbW-Ra-R21" firstAttribute="centerX" secondItem="6cb-p4-JxI" secondAttribute="centerX" id="zM6-Ca-Uqg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Heart rate" image="heart" selectedImage="heart" id="dTz-qd-Bcy">
