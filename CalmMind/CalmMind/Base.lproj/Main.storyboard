@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1X2-TR-7ea">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vVK-8M-3yg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,19 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="627"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-da-ZnQ">
-                                <rect key="frame" x="62" y="654" width="290" height="100"/>
+                                <rect key="frame" x="59.5" y="657.5" width="295" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T87-FA-zlw">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="VZD-fh-8c9"/>
                                         </constraints>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="28" maxX="0.0" maxY="28"/>
-                                        <state key="normal" image="backward.frame" catalog="system">
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                        <state key="normal">
                                             <color key="titleColor" systemColor="labelColor"/>
+                                            <imageReference key="image" image="backward.frame" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
                                             <action selector="restartButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="uZm-17-U88"/>
@@ -41,7 +43,10 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="FJc-bQ-bmi"/>
                                         </constraints>
-                                        <state key="normal" image="playpause" catalog="system"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="playpause" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="playButtonAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="tHe-ME-4KJ"/>
                                         </connections>
@@ -51,8 +56,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="p7e-jt-evx"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
                                         <state key="normal">
-                                            <imageReference key="image" image="forward" catalog="system" symbolScale="default"/>
+                                            <imageReference key="image" image="forward" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
                                         <connections>
@@ -60,8 +66,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR4-X2-72R">
-                                        <rect key="frame" x="270" y="0.0" width="20" height="100"/>
-                                        <state key="normal" image="timer" catalog="system"/>
+                                        <rect key="frame" x="270" y="0.0" width="25" height="100"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="timer" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="setTimerAction:" destination="kcx-gX-dFh" eventType="touchUpInside" id="Zhj-A8-YAC"/>
                                         </connections>
@@ -82,18 +91,26 @@
                                     <action selector="musicLibraryAction" destination="kcx-gX-dFh" eventType="touchUpInside" id="9Rx-zS-tsn"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count down" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-tR-XGl">
+                                <rect key="frame" x="161" y="637" width="92" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CA0-Fg-XT1"/>
                         <color key="backgroundColor" red="0.81536437441721743" green="1" blue="0.99631736126276182" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="MBM-da-ZnQ" firstAttribute="top" secondItem="fil-OK-hlD" secondAttribute="bottom" id="7Y2-hZ-ovf"/>
+                            <constraint firstItem="2dC-tR-XGl" firstAttribute="top" secondItem="fil-OK-hlD" secondAttribute="bottom" constant="10" id="6t5-AA-CaB"/>
+                            <constraint firstItem="MBM-da-ZnQ" firstAttribute="top" secondItem="2dC-tR-XGl" secondAttribute="bottom" id="7fU-0K-H4p"/>
+                            <constraint firstItem="2dC-tR-XGl" firstAttribute="centerX" secondItem="Dw1-Ys-6qe" secondAttribute="centerX" id="EFQ-U9-smQ"/>
                             <constraint firstItem="fil-OK-hlD" firstAttribute="top" secondItem="Dw1-Ys-6qe" secondAttribute="top" id="FvX-zH-e9d"/>
                             <constraint firstItem="6Cr-i9-7Vd" firstAttribute="leading" secondItem="CA0-Fg-XT1" secondAttribute="leading" id="P4Y-4W-JU1"/>
                             <constraint firstItem="fil-OK-hlD" firstAttribute="trailing" secondItem="CA0-Fg-XT1" secondAttribute="trailing" id="aks-UD-Rn6"/>
                             <constraint firstItem="fil-OK-hlD" firstAttribute="leading" secondItem="CA0-Fg-XT1" secondAttribute="leading" id="bib-4m-ahQ"/>
                             <constraint firstItem="MBM-da-ZnQ" firstAttribute="centerX" secondItem="Dw1-Ys-6qe" secondAttribute="centerX" id="gZR-Qe-hCg"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="trailing" secondItem="6Cr-i9-7Vd" secondAttribute="trailing" id="hCH-lB-IAx"/>
-                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.73" id="wUI-yK-lPe"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.7" id="wUI-yK-lPe"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="bottom" secondItem="6Cr-i9-7Vd" secondAttribute="bottom" id="xnw-By-lNK"/>
                         </constraints>
                     </view>
@@ -101,6 +118,7 @@
                         <inset key="imageInsets" minX="8" minY="18" maxX="8" maxY="18"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="countDownLabel" destination="2dC-tR-XGl" id="iXU-dX-wmT"/>
                         <outlet property="goodview" destination="fil-OK-hlD" id="QpI-qi-mUR"/>
                         <outlet property="nextButton" destination="nJc-Og-spz" id="0n4-Ya-aQU"/>
                         <outlet property="playButton" destination="rbY-rV-mlb" id="XYP-Nr-RQo"/>
@@ -154,6 +172,92 @@
             </objects>
             <point key="canvasLocation" x="282.60869565217394" y="265.84821428571428"/>
         </scene>
+        <!--Mood View Controller-->
+        <scene sceneID="QV0-SD-0jY">
+            <objects>
+                <viewController id="vVK-8M-3yg" customClass="moodViewController" customModule="CalmMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="axt-xb-TUg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pdd-nf-4qv">
+                                <rect key="frame" x="57" y="277.5" width="300" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="m0E-lY-tHh"/>
+                                    <constraint firstAttribute="width" constant="300" id="pxa-Cg-czA"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nov-ND-xUO">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="cqX-gc-crx" customClass="myCollectionViewCell" customModule="CalmMind" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PuQ-kJ-V6I">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-fv-efm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="8ZB-71-01k"/>
+                                                        <constraint firstAttribute="height" constant="120" id="C7D-Hc-qEp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lX-w9-R66">
+                                                    <rect key="frame" x="39" y="107" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jf5-fv-efm" firstAttribute="top" secondItem="PuQ-kJ-V6I" secondAttribute="top" id="2tU-cC-nSd"/>
+                                                <constraint firstItem="jf5-fv-efm" firstAttribute="leading" secondItem="PuQ-kJ-V6I" secondAttribute="leading" id="RFb-zy-73I"/>
+                                                <constraint firstAttribute="bottom" secondItem="8lX-w9-R66" secondAttribute="bottom" id="gNy-WP-iRR"/>
+                                                <constraint firstAttribute="trailing" secondItem="jf5-fv-efm" secondAttribute="trailing" id="qH5-Ff-1sO"/>
+                                                <constraint firstItem="8lX-w9-R66" firstAttribute="centerX" secondItem="PuQ-kJ-V6I" secondAttribute="centerX" id="rT4-pH-8EI"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="myImage" destination="jf5-fv-efm" id="jvi-dv-9lq"/>
+                                            <outlet property="myLabel" destination="8lX-w9-R66" id="lZp-xb-9XV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vVK-8M-3yg" id="TcQ-D9-Gzu"/>
+                                    <outlet property="delegate" destination="vVK-8M-3yg" id="73q-le-tsd"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How's your mood today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zve-kz-dkV">
+                                <rect key="frame" x="45.5" y="174" width="323.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QK2-C7-TNf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pdd-nf-4qv" firstAttribute="centerX" secondItem="axt-xb-TUg" secondAttribute="centerX" id="1ep-rQ-Kof"/>
+                            <constraint firstItem="pdd-nf-4qv" firstAttribute="top" secondItem="Zve-kz-dkV" secondAttribute="bottom" constant="70" id="4Lm-n1-sjY"/>
+                            <constraint firstItem="Zve-kz-dkV" firstAttribute="centerX" secondItem="axt-xb-TUg" secondAttribute="centerX" id="KbD-6G-10b"/>
+                            <constraint firstItem="Zve-kz-dkV" firstAttribute="top" secondItem="QK2-C7-TNf" secondAttribute="top" constant="130" id="Mjd-ql-kup"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myCollectionView" destination="pdd-nf-4qv" id="AmI-ee-AdU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKU-W1-3ZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282.60869565217394" y="-399.10714285714283"/>
+        </scene>
         <!--Heart rate-->
         <scene sceneID="zSx-UY-IQS">
             <objects>
@@ -186,6 +290,48 @@
                                     </label>
                                 </subviews>
                             </stackView>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 02f9261... bug
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-Yh-eh6">
+                                <rect key="frame" x="98" y="124" width="218" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are Happy today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-8a-4Rq">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angry-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ujt-gH-PKE">
+                                        <rect key="frame" x="168" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="3OZ-11-9TW"/>
+                                            <constraint firstAttribute="height" constant="50" id="W8M-Fm-4hU"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+=======
+>>>>>>> parent of 02f9261... bug
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
+=======
+>>>>>>> parent of e2e8ac6... Adding logos of hr and playbackspeed on music player page
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vbi-Sk-bKt"/>
                         <color key="backgroundColor" red="1" green="0.89606964008921486" blue="0.96368488453639956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -210,7 +356,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="FT7-fW-hNF">
             <objects>
-                <tabBarController id="1X2-TR-7ea" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="1X2-TR-7ea" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j2s-xR-KBZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

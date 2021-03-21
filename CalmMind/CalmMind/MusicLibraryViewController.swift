@@ -14,7 +14,7 @@ protocol ChangeSongDelegate {
 class MusicLibraryViewController: UIViewController {
     
     @IBOutlet var mytableView: UITableView!
-    var songList = ["song1", "song2", "song3"]
+    var songList = ["Music 1", "Music 3", "Music 2"]
     var bpmList = ["80", "70", "60"]
     var delegate: ChangeSongDelegate?
     
