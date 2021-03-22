@@ -52,10 +52,11 @@ extension MusicLibraryViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         // ???
-//        cell.imageview =
+        cell.backgroundColor = UIColor.white
+        cell.contentView.backgroundColor = UIColor.white
         cell.songnameLabel.text = songList[indexPath.row]
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
-        cell.bpmLabel.text = bpmList[indexPath.row] + " BPM"
+        cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "
         cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
         return cell
         

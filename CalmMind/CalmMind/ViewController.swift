@@ -15,10 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet var heartRateLabel: UILabel!
     @IBOutlet var moodLogo: UIImageView!
     @IBOutlet var moodLabel: UILabel!
+    @IBOutlet var mytableView: UITableView!
     var lastHeartRate : Int = 0
     var latestHeartRate : Int = 0
     let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
     let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
+    var songList = [String]()
+    var bpmList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +30,12 @@ class ViewController: UIViewController {
         // Authorizing for the HealthKit
         authorizeHealthkit()
         
-        // Display mood
-        // ??????
+        // Change and display mood
         let tbc = self.tabBarController as! BaseTabBarController
         moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " now"
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
+        songList = tbc.happySongList
+        bpmList = tbc.happyBPMList
         
         // Parse heart rate
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
@@ -44,7 +48,12 @@ class ViewController: UIViewController {
         
         // Animating the heart image view
         animate_heart()
-
+        
+        let nib = UINib(nibName: "MyTableViewCell", bundle: nil)
+        mytableView.register(nib, forCellReuseIdentifier: "MyTableViewCell")
+        mytableView.delegate = self
+        mytableView.dataSource = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -161,3 +170,43 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("you tapped me!")
+        tableView.deselectRow(at: indexPath, animated: true)
+//        self.delegate?.changeSong(songName: songList[indexPath.row])
+//        self.dismiss(animated: true, completion: nil)
+        
+        print(songList[indexPath.row], bpmList[indexPath.row])
+        
+//        (self.tabBarController!.viewControllers![0] as! MusicPlayerViewController).audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
+//        audioPlayer.prepareToPlay()
+//        
+//        // Repeating the list for 20 times by default
+//        audioPlayer.numberOfLoops = 20
+//        audioPlayer.enableRate = true
+//        audioPlayer.rate = 2
+//        audioPlayer.volume = 1
+//        currentSong = filename
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return songList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
+        // ???
+        cell.songnameLabel.text = songList[indexPath.row]
+        cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
+        cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "
+        cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
+        return cell
+        
+    }
+}

@@ -11,6 +11,10 @@ class BaseTabBarController: UITabBarController {
     
     var latestHeartRate : Int = 0
     var currentMoodIndex : Int = 0
+    var sadSongList = ["Music 1", "Music 2", "Music 3"]
+    var sadBPMList = ["80", "70", "60"]
+    var happySongList = ["Music 3", "Music 2", "Music 1"]
+    var happyBPMList = ["90", "75", "50"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
