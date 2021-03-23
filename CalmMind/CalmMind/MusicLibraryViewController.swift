@@ -14,9 +14,11 @@ protocol ChangeSongDelegate {
 class MusicLibraryViewController: UIViewController {
     
     @IBOutlet var mytableView: UITableView!
-    var songList = ["Floating in the City", "Rising of the Dream", "Dance of Gossamer", "Dazing", "Drip Drip Drip"]
-    var bpmList = ["100", "90", "80", "70", "60"]
+    var songList = [String]()
+    var bpmList = [String]()
     var delegate: ChangeSongDelegate?
+    var backColor = UIColor()
+    var hexList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,8 @@ class MusicLibraryViewController: UIViewController {
         mytableView.delegate = self
         mytableView.dataSource = self
         
+        view.backgroundColor = backColor
+        mytableView.backgroundColor = backColor
     }
 
 }
@@ -52,8 +56,9 @@ extension MusicLibraryViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         // ???
-        cell.backgroundColor = UIColor.white
-        cell.contentView.backgroundColor = UIColor.white
+        cell.backgroundColor = backColor
+        cell.contentView.backgroundColor = backColor
+        cell.imageview.image = UIImage(named: hexList[indexPath.row])
         cell.songnameLabel.text = songList[indexPath.row]
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
         cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "

@@ -16,7 +16,10 @@ class MusicPlayerViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     var currentSong: String!
     var songList = [String]()
-    var imageList = ["galaxy", "sunset", "river", "galaxy", "sunset"]
+    var bpmList = [String]()
+    var currentHex = ""
+    var hexList = [String]()
+//    var imageList = ["galaxy", "sunset", "river", "galaxy", "sunset"]
     var timer = Timer()
     var initial_hr = 0
     var countdown = 10
@@ -36,31 +39,47 @@ class MusicPlayerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let tbc = self.tabBarController as! BaseTabBarController
+        
+        // ??? Need to get a matched list
         songList = tbc.happySongList
+        bpmList = tbc.happyBPMList
+        hexList = tbc.happyHexList
         
         chooseBackgroundMusic(filename: songList[0])
         countDownLabel.text = "Calm down now..."
         
-//        let queue = DispatchQueue(label: "maintenance", qos: .utility)
-//        queue.async {
-//            while true {
-//                self.updateHr()
-//                print(self.latestHeartRate)
-//                sleep(1)
-//            }
-//        }
-//
-//        audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: songList[0], ofType: "mp3")!))
-//        audioPlayer.prepareToPlay()
-        
-        
+        currentHex = hexList[0]
+        view.backgroundColor = hexStringToUIColor(hex: hexList[0])
+        goodview.image = UIImage(named: hexList[0])
         
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
-////        updateHr()
+//       updateHr()
 //        heartRateLabel.text = String(latestHeartRate)
 //    }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
     
     func chooseBackgroundMusic(filename: String) {
         do {
@@ -230,14 +249,16 @@ class MusicPlayerViewController: UIViewController {
     func animateChangeImageView(songName: String) {
         
         let indexOfSong = songList.firstIndex(of: songName)
-        let nextSongIndex = (indexOfSong! + 1) % songList.count
+//        let nextSongIndex = (indexOfSong! + 1) % songList.count
         
         UIView.animate(withDuration: 0.2, animations: {
             self.goodview.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         },
         completion: { done in
             if done {
-                self.goodview.image = UIImage(named: self.imageList[nextSongIndex])
+                self.goodview.image = UIImage(named: self.hexList[indexOfSong!])
+                self.view.backgroundColor = self.hexStringToUIColor(hex: self.hexList[indexOfSong!])
+                self.currentHex = self.hexList[indexOfSong!]
                 self.goodview.transform = CGAffineTransform.identity
             }
         })
@@ -247,52 +268,13 @@ class MusicPlayerViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MLvc") as! MusicLibraryViewController
         controller.delegate = self
+        controller.songList = songList
+        controller.bpmList = bpmList
+        controller.hexList = hexList
+        controller.backColor = hexStringToUIColor(hex: currentHex)
         self.present(controller, animated: true, completion: nil)
     }
-    
-//    // Parsing the latest heart rate from HealthKit
-//    func getLatestHeartRate() {
-//        
-//        guard let sampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else {
-//            return
-//        }
-//        
-//        let startDate = Calendar.current.date(byAdding: .hour, value: -1, to: Date())
-//        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
-//        
-//        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-//        
-//        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor]) { (sample, result, error) in
-//            guard error == nil else {
-//                return
-//            }
-//            
-//            // If no bpm recorded
-//            if result?.count == 0 {
-//                self.sendAlert(alertMsg: "No heart rate recorded in Health App")
-//            }
-//            let data = result![0] as! HKQuantitySample
-//            let unit = HKUnit(from: "count/min")
-//            let latestHr = data.quantity.doubleValue(for: unit)
-//            self.latestHeartRate = Int(latestHr)
-//            
-//        }
-//        
-//        healthStore.execute(query)
-//    }
-//    
-//    func updateHr() {
-//        let hrQueue = DispatchQueue(label: "Getting latest hr", attributes: .concurrent)
-//        hrQueue.async {
-//        
-////            self.getLatestHeartRate()
-//            
-//            DispatchQueue.main.async {
-//                self.heartRateLabel.text = String(self.latestHeartRate)
-//            }
-//        }
-//        
-//    }
+
 }
 
 extension MusicPlayerViewController: ChangeSongDelegate {

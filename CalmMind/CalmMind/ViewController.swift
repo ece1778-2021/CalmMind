@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
     var songList = [String]()
     var bpmList = [String]()
+    var hexList = [String]()
     var isDemoOn = false
     var demoHeartRateArray = [100, 90, 80, 70, 60, 50]
     var playbackspeedArray = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5]
@@ -44,8 +45,11 @@ class ViewController: UIViewController {
         
         moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " now"
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
-        songList = tbc.happySongList
+        // Get first 5 tracks
+        // ??? Need to get a matched list
+        songList = Array(tbc.happySongList.prefix(upTo: 3))
         bpmList = tbc.happyBPMList
+        hexList = tbc.happyHexList
         
         // Parse heart rate and update label
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
@@ -274,6 +278,7 @@ extension ViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
         // ???
+        cell.imageview.image = UIImage(named: hexList[indexPath.row])
         cell.songnameLabel.text = songList[indexPath.row]
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
         cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "

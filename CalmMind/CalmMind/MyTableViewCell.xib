@@ -23,9 +23,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="Yh5-6T-pXd">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="Yh5-6T-pXd">
+                        <rect key="frame" x="0.0" y="10" width="80" height="80"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="80" id="Bto-o9-yjK"/>
                             <constraint firstAttribute="width" constant="80" id="xP0-xu-TUS"/>
                         </constraints>
                     </imageView>
@@ -41,11 +42,12 @@
                 <constraints>
                     <constraint firstItem="Rdf-i5-Ty1" firstAttribute="top" secondItem="ybG-tx-oGD" secondAttribute="bottom" constant="5" id="AYH-uL-aqv"/>
                     <constraint firstItem="ybG-tx-oGD" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="10" id="Hvm-G6-TUk"/>
+                    <constraint firstAttribute="bottom" secondItem="Yh5-6T-pXd" secondAttribute="bottom" constant="10" id="Ldb-Dl-N72"/>
                     <constraint firstItem="ybG-tx-oGD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N7d-rM-bzK"/>
                     <constraint firstItem="Yh5-6T-pXd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QfB-hN-yPf"/>
-                    <constraint firstAttribute="bottom" secondItem="Yh5-6T-pXd" secondAttribute="bottom" id="ow2-Qq-0qe"/>
+                    <constraint firstItem="Yh5-6T-pXd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bWH-pE-IJ6"/>
                     <constraint firstItem="Rdf-i5-Ty1" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="10" id="qd0-od-jQm"/>
-                    <constraint firstItem="Yh5-6T-pXd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ssU-4z-6vW"/>
+                    <constraint firstItem="Yh5-6T-pXd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zhO-iY-hFH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
