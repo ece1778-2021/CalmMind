@@ -10,8 +10,8 @@ import UIKit
 class moodViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let reuseIdentifier = "cell"
-    let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
-    let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
+    let moodArray = ["Happy", "Sad", "Neutral"]
+    let moodImageArray = ["happy-icon", "sad-icon", "crazy-icon"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return moodArray.count
@@ -30,7 +30,7 @@ class moodViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 
-        return 2
+        return 1
     }
     
     // make a cell for each cell index path

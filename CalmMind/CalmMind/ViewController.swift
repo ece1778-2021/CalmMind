@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     let healthStore = HKHealthStore()
     var lastHeartRate : Int = 0
     var latestHeartRate : Int = 0
-    let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
-    let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
+    let moodArray = ["Happy", "Sad", "Neutral"]
+    let moodImageArray = ["happy-icon", "sad-icon", "crazy-icon"]
     var songList = [String]()
     var bpmList = [String]()
     var hexList = [String]()
@@ -47,9 +47,15 @@ class ViewController: UIViewController {
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
         // Get first 5 tracks
         // ??? Need to get a matched list
-        songList = Array(tbc.happySongList[0...2])
-        bpmList = Array(tbc.happyBPMList[0...2])
-        hexList = Array(tbc.happyHexList[0...2])
+        if tbc.currentMoodIndex == 0 {
+            songList = Array(tbc.happySongList[0...2])
+            bpmList = Array(tbc.happyBPMList[0...2])
+            hexList = Array(tbc.happyHexList[0...2])
+        } else {
+            songList = Array(tbc.sadSongList[0...2])
+            bpmList = Array(tbc.sadBPMList[0...2])
+            hexList = Array(tbc.sadHexList[0...2])
+        }
         
         // Parse heart rate and update label
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
@@ -109,6 +115,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeMoodAction(_ sender: Any) {
+        
+        // Stop the music
+        let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
+        secondTab.audioPlayer.stop()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "mood_vc") as! moodViewController

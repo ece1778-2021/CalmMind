@@ -41,9 +41,15 @@ class MusicPlayerViewController: UIViewController {
         let tbc = self.tabBarController as! BaseTabBarController
         
         // ??? Need to get a matched list
-        songList = tbc.happySongList
-        bpmList = tbc.happyBPMList
-        hexList = tbc.happyHexList
+        if tbc.currentMoodIndex == 0 {
+            songList = tbc.happySongList
+            bpmList = tbc.happyBPMList
+            hexList = tbc.happyHexList
+        } else {
+            songList = tbc.sadSongList
+            bpmList = tbc.sadBPMList
+            hexList = tbc.sadHexList
+        }
         
         chooseBackgroundMusic(filename: songList[0])
         countDownLabel.text = "Calm down now..."

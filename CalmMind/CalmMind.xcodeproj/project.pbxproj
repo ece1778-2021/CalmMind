@@ -29,6 +29,9 @@
 		85DAC296260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28E260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 */; };
 		85DAC297260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28F260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 */; };
 		85DAC298260A45D800F93384 /* Sunlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC290260A45D800F93384 /* Sunlight.mp3 */; };
+		85DAC29D260A5F5000F93384 /* Calm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC29A260A5F5000F93384 /* Calm.mp3 */; };
+		85DAC29E260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC29B260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 */; };
+		85DAC29F260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC29C260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		85DAC28E260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chopin - Nocturne in E Flat.mp3"; sourceTree = "<group>"; };
 		85DAC28F260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mendelssohn - Songs without Words.mp3"; sourceTree = "<group>"; };
 		85DAC290260A45D800F93384 /* Sunlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunlight.mp3; sourceTree = "<group>"; };
+		85DAC29A260A5F5000F93384 /* Calm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Calm.mp3; sourceTree = "<group>"; };
+		85DAC29B260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1-01 Unbraiding the Sun.mp3"; sourceTree = "<group>"; };
+		85DAC29C260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "RÃªverie, L. 68_ Reverie.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,9 @@
 		8585347225F7988C00600A0A /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				85DAC29B260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 */,
+				85DAC29A260A5F5000F93384 /* Calm.mp3 */,
+				85DAC29C260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 */,
 				85DAC28C260A45D800F93384 /* 1-01 sleeping bag.mp3 */,
 				85DAC28D260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 */,
 				85DAC289260A45D800F93384 /* 1-07 Song On The Beach.mp3 */,
@@ -191,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DAC29F260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 in Resources */,
 				85DAC295260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 in Resources */,
 				1ECC237725E6CAE4000B620D /* LaunchScreen.storyboard in Resources */,
 				85DAC293260A45D800F93384 /* Sparkle.mp3 in Resources */,
@@ -199,7 +209,9 @@
 				85DAC294260A45D800F93384 /* 1-01 sleeping bag.mp3 in Resources */,
 				85DAC291260A45D800F93384 /* 1-07 Song On The Beach.mp3 in Resources */,
 				85DAC296260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 in Resources */,
+				85DAC29D260A5F5000F93384 /* Calm.mp3 in Resources */,
 				1ECC237225E6CAE0000B620D /* Main.storyboard in Resources */,
+				85DAC29E260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 in Resources */,
 				85DAC297260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 in Resources */,
 				8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */,
 				85DAC292260A45D800F93384 /* Ocean.mp3 in Resources */,
