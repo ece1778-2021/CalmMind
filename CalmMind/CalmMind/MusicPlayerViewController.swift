@@ -49,7 +49,7 @@ class MusicPlayerViewController: UIViewController {
         countDownLabel.text = "Calm down now..."
         
         currentHex = hexList[0]
-        view.backgroundColor = hexStringToUIColor(hex: hexList[0])
+        view.backgroundColor = hexStringToUIColor(hex: hexList[0], add_rgb: 0)
         goodview.image = UIImage(named: hexList[0])
         
     }
@@ -59,7 +59,7 @@ class MusicPlayerViewController: UIViewController {
 //        heartRateLabel.text = String(latestHeartRate)
 //    }
     
-    func hexStringToUIColor (hex:String) -> UIColor {
+    func hexStringToUIColor (hex:String, add_rgb: CGFloat) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
         if (cString.hasPrefix("#")) {
@@ -74,9 +74,9 @@ class MusicPlayerViewController: UIViewController {
         Scanner(string: cString).scanHexInt64(&rgbValue)
 
         return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0 + add_rgb,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0 + add_rgb,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0 + add_rgb,
             alpha: CGFloat(1.0)
         )
     }
@@ -257,7 +257,7 @@ class MusicPlayerViewController: UIViewController {
         completion: { done in
             if done {
                 self.goodview.image = UIImage(named: self.hexList[indexOfSong!])
-                self.view.backgroundColor = self.hexStringToUIColor(hex: self.hexList[indexOfSong!])
+                self.view.backgroundColor = self.hexStringToUIColor(hex: self.hexList[indexOfSong!], add_rgb: 0)
                 self.currentHex = self.hexList[indexOfSong!]
                 self.goodview.transform = CGAffineTransform.identity
             }
@@ -271,7 +271,7 @@ class MusicPlayerViewController: UIViewController {
         controller.songList = songList
         controller.bpmList = bpmList
         controller.hexList = hexList
-        controller.backColor = hexStringToUIColor(hex: currentHex)
+        controller.backColor = hexStringToUIColor(hex: currentHex, add_rgb: CGFloat(0.2))
         self.present(controller, animated: true, completion: nil)
     }
 

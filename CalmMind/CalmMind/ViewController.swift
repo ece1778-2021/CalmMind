@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
         // Get first 5 tracks
         // ??? Need to get a matched list
-        songList = Array(tbc.happySongList.prefix(upTo: 3))
-        bpmList = tbc.happyBPMList
-        hexList = tbc.happyHexList
+        songList = Array(tbc.happySongList[0...2])
+        bpmList = Array(tbc.happyBPMList[0...2])
+        hexList = Array(tbc.happyHexList[0...2])
         
         // Parse heart rate and update label
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
@@ -73,9 +73,6 @@ class ViewController: UIViewController {
                     sleep(2)
                 }
                 tbc.latestHeartRate = self.latestHeartRate
-//                var secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
-//                secondTab.p.latestHeartRate = self.latestHeartRate
-//                secondTab.heartRateLabel.text = String(self.latestHeartRate)
             }
         }
         
@@ -202,14 +199,7 @@ class ViewController: UIViewController {
             self.getLatestHeartRate()
             
             DispatchQueue.main.async {
-//                if self.latestHeartRate != 0 {
-//                    if self.lastHeartRate == self.latestHeartRate{
-//                        let randomNum = Int(arc4random_uniform(0))
-//                        self.heartRateLabel.text = String(self.latestHeartRate + randomNum) + " bpm"
-//                    } else {
-//                        self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
-//                    }
-//                }
+
                 self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
                 let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
                 secondTab.latestHeartRate = self.latestHeartRate
@@ -222,11 +212,6 @@ class ViewController: UIViewController {
     
     func updateHrDemoMode(demoCurrentHr: Int, demoCurrentPBS: Double) {
         
-//        for tmp_hr in demoHeartRateArray {
-//            self.latestHeartRate = tmp_hr
-//            self.heartRateLabel.text = String(tmp_hr)
-//            sleep(4)
-//        }
         let hrQueue = DispatchQueue(label: "Getting latest hr", attributes: .concurrent)
         hrQueue.async {
             self.latestHeartRate = demoCurrentHr
@@ -251,20 +236,8 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you tapped me!")
         tableView.deselectRow(at: indexPath, animated: true)
-//        self.delegate?.changeSong(songName: songList[indexPath.row])
-//        self.dismiss(animated: true, completion: nil)
-        
         print(songList[indexPath.row], bpmList[indexPath.row])
         
-//        (self.tabBarController!.viewControllers![0] as! MusicPlayerViewController).audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: filename, ofType: "mp3")!))
-//        audioPlayer.prepareToPlay()
-//        
-//        // Repeating the list for 20 times by default
-//        audioPlayer.numberOfLoops = 20
-//        audioPlayer.enableRate = true
-//        audioPlayer.rate = 2
-//        audioPlayer.volume = 1
-//        currentSong = filename
     }
 }
 
