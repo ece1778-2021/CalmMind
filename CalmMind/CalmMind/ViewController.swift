@@ -10,39 +10,68 @@ import HealthKit
 
 class ViewController: UIViewController {
     
-    let healthStore = HKHealthStore()
     @IBOutlet var heartLogo: UIImageView!
     @IBOutlet var heartRateLabel: UILabel!
     @IBOutlet var moodLogo: UIImageView!
     @IBOutlet var moodLabel: UILabel!
     @IBOutlet var mytableView: UITableView!
+    @IBOutlet var demoSwitch: UISwitch!
+    
+    let healthStore = HKHealthStore()
     var lastHeartRate : Int = 0
     var latestHeartRate : Int = 0
     let moodArray = ["Happy", "Angry", "Sad", "Crazy"]
     let moodImageArray = ["happy-icon", "angry-icon", "sad-icon", "crazy-icon"]
     var songList = [String]()
     var bpmList = [String]()
+    var isDemoOn = false
+    var demoHeartRateArray = [100, 90, 80, 70, 60, 50]
+    var playbackspeedArray = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Preload all views in tabbar controller
+        self.tabBarController!.viewControllers?.forEach { let _ = $0.view }
         
         // Authorizing for the HealthKit
         authorizeHealthkit()
         
         // Change and display mood
         let tbc = self.tabBarController as! BaseTabBarController
+//        var secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
+        
         moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " now"
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
         songList = tbc.happySongList
         bpmList = tbc.happyBPMList
         
-        // Parse heart rate
+        // Parse heart rate and update label
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
         queue.async {
             while true {
-                self.updateHr()
-                sleep(2)
+                if self.isDemoOn {
+
+//                    for demoCurrentHr in self.demoHeartRateArray {
+                    for (i, demoCurrentHr) in self.demoHeartRateArray.enumerated() {
+                        
+                        
+                        if !self.isDemoOn {
+                            break
+                        }
+                        self.updateHrDemoMode(demoCurrentHr: demoCurrentHr, demoCurrentPBS: self.playbackspeedArray[i])
+                        sleep(2)
+                    }
+                    
+                } else {
+                    self.updateHr()
+                    sleep(2)
+                }
+                tbc.latestHeartRate = self.latestHeartRate
+//                var secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
+//                secondTab.p.latestHeartRate = self.latestHeartRate
+//                secondTab.heartRateLabel.text = String(self.latestHeartRate)
             }
         }
         
@@ -54,6 +83,18 @@ class ViewController: UIViewController {
         mytableView.delegate = self
         mytableView.dataSource = self
         
+        demoSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
+        
+        
+        
+    }
+    
+    @objc func stateChanged(switchState: UISwitch) {
+        if demoSwitch.isOn {
+            isDemoOn = true
+        } else {
+            isDemoOn = false
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,7 +102,9 @@ class ViewController: UIViewController {
         if lastHeartRate != 0 {
             animate_heart()
         }
-        updateHr()
+        if !self.isDemoOn {
+            updateHr()
+        }
     }
     
     @IBAction func changeMoodAction(_ sender: Any) {
@@ -155,15 +198,44 @@ class ViewController: UIViewController {
             self.getLatestHeartRate()
             
             DispatchQueue.main.async {
-                if self.latestHeartRate != 0 {
-                    if self.lastHeartRate == self.latestHeartRate{
-                        let randomNum = Int(arc4random_uniform(0))
-                        self.heartRateLabel.text = String(self.latestHeartRate + randomNum) + " bpm"
-                    } else {
-                        self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
-                    }
-                }
+//                if self.latestHeartRate != 0 {
+//                    if self.lastHeartRate == self.latestHeartRate{
+//                        let randomNum = Int(arc4random_uniform(0))
+//                        self.heartRateLabel.text = String(self.latestHeartRate + randomNum) + " bpm"
+//                    } else {
+//                        self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
+//                    }
+//                }
+                self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
+                let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
+                secondTab.latestHeartRate = self.latestHeartRate
+                secondTab.heartRateLabel.text = String(self.latestHeartRate)
+                secondTab.playbackspeedLabel.text = String(1.0)
+                secondTab.audioPlayer.rate = Float(1.0)
             }
+        }
+    }
+    
+    func updateHrDemoMode(demoCurrentHr: Int, demoCurrentPBS: Double) {
+        
+//        for tmp_hr in demoHeartRateArray {
+//            self.latestHeartRate = tmp_hr
+//            self.heartRateLabel.text = String(tmp_hr)
+//            sleep(4)
+//        }
+        let hrQueue = DispatchQueue(label: "Getting latest hr", attributes: .concurrent)
+        hrQueue.async {
+            self.latestHeartRate = demoCurrentHr
+            
+            DispatchQueue.main.async {
+                self.heartRateLabel.text = String(self.latestHeartRate) + " bpm"
+                let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
+                secondTab.latestHeartRate = self.latestHeartRate
+                secondTab.heartRateLabel.text = String(self.latestHeartRate)
+                secondTab.playbackspeedLabel.text = String(demoCurrentPBS)
+                secondTab.audioPlayer.rate = Float(demoCurrentPBS)
+            }
+            
         }
     }
 

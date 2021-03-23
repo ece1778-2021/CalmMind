@@ -14,6 +14,11 @@
 		1ECC237425E6CAE4000B620D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC237325E6CAE4000B620D /* Assets.xcassets */; };
 		1ECC237725E6CAE4000B620D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECC237525E6CAE4000B620D /* LaunchScreen.storyboard */; };
 		851A34172602717C0033578A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A34162602717C0033578A /* BaseTabBarController.swift */; };
+		8524AD852608A283003F4DA8 /* Rising of the Dream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8524AD802608A283003F4DA8 /* Rising of the Dream.mp3 */; };
+		8524AD862608A283003F4DA8 /* Floating in the City.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8524AD812608A283003F4DA8 /* Floating in the City.mp3 */; };
+		8524AD872608A283003F4DA8 /* Dazing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8524AD822608A283003F4DA8 /* Dazing.mp3 */; };
+		8524AD882608A283003F4DA8 /* Drip Drip Drip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8524AD832608A283003F4DA8 /* Drip Drip Drip.mp3 */; };
+		8524AD892608A283003F4DA8 /* Dance of Gossamer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8524AD842608A283003F4DA8 /* Dance of Gossamer.mp3 */; };
 		8538B96925EFC2E500301316 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */; };
 		853E0A1C26051F4700D2A1F1 /* moodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E0A1B26051F4700D2A1F1 /* moodViewController.swift */; };
 		853E0A252605257D00D2A1F1 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */; };
@@ -21,9 +26,6 @@
 		8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */; };
 		8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */; };
 		8585D8F425F155990038F2FF /* MusicLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8F325F155990038F2FF /* MusicLibraryViewController.swift */; };
-		85FE946925F95B9E00A9C139 /* Music 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FE946725F95B9E00A9C139 /* Music 2.mp3 */; };
-		85FE947625F95C1B00A9C139 /* Music 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FE947525F95C1B00A9C139 /* Music 3.mp3 */; };
-		85FE947C25F95C9800A9C139 /* Music 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85FE947B25F95C9800A9C139 /* Music 1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,11 @@
 		1ECC237625E6CAE4000B620D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ECC237825E6CAE4000B620D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851A34162602717C0033578A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		8524AD802608A283003F4DA8 /* Rising of the Dream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rising of the Dream.mp3"; sourceTree = "<group>"; };
+		8524AD812608A283003F4DA8 /* Floating in the City.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Floating in the City.mp3"; sourceTree = "<group>"; };
+		8524AD822608A283003F4DA8 /* Dazing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dazing.mp3; sourceTree = "<group>"; };
+		8524AD832608A283003F4DA8 /* Drip Drip Drip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Drip Drip Drip.mp3"; sourceTree = "<group>"; };
+		8524AD842608A283003F4DA8 /* Dance of Gossamer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dance of Gossamer.mp3"; sourceTree = "<group>"; };
 		8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		853E0A1B26051F4700D2A1F1 /* moodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodViewController.swift; sourceTree = "<group>"; };
 		853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -44,9 +51,6 @@
 		8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		8585D8F325F155990038F2FF /* MusicLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryViewController.swift; sourceTree = "<group>"; };
-		85FE946725F95B9E00A9C139 /* Music 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Music 2.mp3"; sourceTree = "<group>"; };
-		85FE947525F95C1B00A9C139 /* Music 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Music 3.mp3"; sourceTree = "<group>"; };
-		85FE947B25F95C9800A9C139 /* Music 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Music 1.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +116,11 @@
 		8585347225F7988C00600A0A /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				85FE947B25F95C9800A9C139 /* Music 1.mp3 */,
-				85FE946725F95B9E00A9C139 /* Music 2.mp3 */,
-				85FE947525F95C1B00A9C139 /* Music 3.mp3 */,
+				8524AD842608A283003F4DA8 /* Dance of Gossamer.mp3 */,
+				8524AD822608A283003F4DA8 /* Dazing.mp3 */,
+				8524AD832608A283003F4DA8 /* Drip Drip Drip.mp3 */,
+				8524AD812608A283003F4DA8 /* Floating in the City.mp3 */,
+				8524AD802608A283003F4DA8 /* Rising of the Dream.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -176,11 +182,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85FE947625F95C1B00A9C139 /* Music 3.mp3 in Resources */,
-				85FE947C25F95C9800A9C139 /* Music 1.mp3 in Resources */,
+				8524AD852608A283003F4DA8 /* Rising of the Dream.mp3 in Resources */,
+				8524AD862608A283003F4DA8 /* Floating in the City.mp3 in Resources */,
 				1ECC237725E6CAE4000B620D /* LaunchScreen.storyboard in Resources */,
-				85FE946925F95B9E00A9C139 /* Music 2.mp3 in Resources */,
+				8524AD872608A283003F4DA8 /* Dazing.mp3 in Resources */,
 				1ECC237425E6CAE4000B620D /* Assets.xcassets in Resources */,
+				8524AD882608A283003F4DA8 /* Drip Drip Drip.mp3 in Resources */,
+				8524AD892608A283003F4DA8 /* Dance of Gossamer.mp3 in Resources */,
 				1ECC237225E6CAE0000B620D /* Main.storyboard in Resources */,
 				8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */,
 			);

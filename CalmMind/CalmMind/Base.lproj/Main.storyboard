@@ -232,6 +232,7 @@
                         <outlet property="heartRateLabel" destination="OPU-L0-0M0" id="iSN-YT-ETC"/>
                         <outlet property="nextButton" destination="nJc-Og-spz" id="0n4-Ya-aQU"/>
                         <outlet property="playButton" destination="rbY-rV-mlb" id="XYP-Nr-RQo"/>
+                        <outlet property="playbackspeedLabel" destination="MHB-tl-kC0" id="Cfc-pw-00g"/>
                         <outlet property="restartButton" destination="T87-FA-zlw" id="QWZ-XL-RN8"/>
                         <outlet property="timerButton" destination="uR4-X2-72R" id="6IP-qg-IRH"/>
                     </connections>
@@ -460,12 +461,17 @@
                                     <action selector="changeMoodAction:" destination="hKA-DO-17U" eventType="touchUpInside" id="XyD-Tp-m5B"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Shm-g7-xrV">
+                                <rect key="frame" x="345" y="44" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vbi-Sk-bKt"/>
                         <color key="backgroundColor" red="1" green="0.89606964008921486" blue="0.96368488453639956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5bv-22-dtw" firstAttribute="leading" secondItem="Vbi-Sk-bKt" secondAttribute="leading" constant="10" id="BKa-W0-aLX"/>
                             <constraint firstItem="62C-PO-FRy" firstAttribute="top" secondItem="Vbi-Sk-bKt" secondAttribute="top" constant="40" id="EY0-ZF-hxZ"/>
+                            <constraint firstItem="Vbi-Sk-bKt" firstAttribute="trailing" secondItem="Shm-g7-xrV" secondAttribute="trailing" constant="20" id="MDK-i4-86k"/>
+                            <constraint firstItem="Shm-g7-xrV" firstAttribute="top" secondItem="Vbi-Sk-bKt" secondAttribute="top" id="RaL-2m-Mge"/>
                             <constraint firstAttribute="trailing" secondItem="62C-PO-FRy" secondAttribute="trailing" constant="20" id="arX-Tm-oYd"/>
                             <constraint firstItem="62C-PO-FRy" firstAttribute="leading" secondItem="Vbi-Sk-bKt" secondAttribute="leading" constant="20" id="hIj-0P-j0w"/>
                             <constraint firstItem="Vbi-Sk-bKt" firstAttribute="trailing" secondItem="5bv-22-dtw" secondAttribute="trailing" constant="10" id="hJp-CT-pkn"/>
@@ -478,6 +484,7 @@
                         <inset key="landscapeImageInsets" minX="8" minY="0.0" maxX="8" maxY="8"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="demoSwitch" destination="Shm-g7-xrV" id="QIA-UY-VwK"/>
                         <outlet property="heartLogo" destination="FVv-hQ-tyK" id="lZN-Gu-4QR"/>
                         <outlet property="heartRateLabel" destination="LYm-KE-ltw" id="evK-Kw-CEb"/>
                         <outlet property="moodLabel" destination="5JE-8a-4Rq" id="p4x-kg-OE3"/>

@@ -14,8 +14,8 @@ protocol ChangeSongDelegate {
 class MusicLibraryViewController: UIViewController {
     
     @IBOutlet var mytableView: UITableView!
-    var songList = ["Music 1", "Music 3", "Music 2"]
-    var bpmList = ["80", "70", "60"]
+    var songList = ["Floating in the City", "Rising of the Dream", "Dance of Gossamer", "Dazing", "Drip Drip Drip"]
+    var bpmList = ["100", "90", "80", "70", "60"]
     var delegate: ChangeSongDelegate?
     
     override func viewDidLoad() {
