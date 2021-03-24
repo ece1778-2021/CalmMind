@@ -45,21 +45,67 @@ class ViewController: UIViewController {
         
         moodLabel.text = "You feel " + moodArray[tbc.currentMoodIndex] + " now"
         moodLogo.image = UIImage(named: moodImageArray[tbc.currentMoodIndex])
-        // Get first 5 tracks
-        // ??? Need to get a matched list
+        
+        // Get the right music list based on mood
         if tbc.currentMoodIndex == 0 {
-            songList = Array(tbc.happySongList[0...2])
-            bpmList = Array(tbc.happyBPMList[0...2])
-            hexList = Array(tbc.happyHexList[0...2])
+            songList = tbc.happySongList
+            bpmList = tbc.happyBPMList
+            hexList = tbc.happyHexList
         } else if tbc.currentMoodIndex == 1 {
-            songList = Array(tbc.sadSongList[0...2])
-            bpmList = Array(tbc.sadBPMList[0...2])
-            hexList = Array(tbc.sadHexList[0...2])
+            songList = tbc.sadSongList
+            bpmList = tbc.sadBPMList
+            hexList = tbc.sadHexList
         } else {
-            songList = Array(tbc.neutralSongList[0...2])
-            bpmList = Array(tbc.neutralBPMList[0...2])
-            hexList = Array(tbc.neutralHexList[0...2])
+            songList = tbc.neutralSongList
+            bpmList = tbc.neutralBPMList
+            hexList = tbc.neutralHexList
         }
+        
+        // Get best 3 tracks
+        // Get first hr
+        let queue1 = DispatchQueue(label: "maintenance", qos: .utility)
+        queue1.async {
+            self.updateHr()
+            DispatchQueue.main.async {
+                tbc.latestHeartRate = self.latestHeartRate
+                var i = 0
+                while i < self.bpmList.count {
+                    if Int(self.bpmList[i])! < self.latestHeartRate {
+                        break
+                    }
+                    i += 1
+                }
+                print(i)
+                
+                var start = i - 1
+                var end = i + 1
+                if start < 0 {
+                    start = 0
+                    end = 2
+                } else if end == self.bpmList.count {
+                    end -= 1
+                    start -= 1
+                }
+                self.songList = Array(self.songList[start...end])
+                self.bpmList = Array(self.bpmList[start...end])
+                self.hexList = Array(self.hexList[start...end])
+                self.mytableView.reloadData()
+            }
+        }
+        
+//        if tbc.currentMoodIndex == 0 {
+//            songList = Array(tbc.happySongList[0...2])
+//            bpmList = Array(tbc.happyBPMList[0...2])
+//            hexList = Array(tbc.happyHexList[0...2])
+//        } else if tbc.currentMoodIndex == 1 {
+//            songList = Array(tbc.sadSongList[0...2])
+//            bpmList = Array(tbc.sadBPMList[0...2])
+//            hexList = Array(tbc.sadHexList[0...2])
+//        } else {
+//            songList = Array(tbc.neutralSongList[0...2])
+//            bpmList = Array(tbc.neutralBPMList[0...2])
+//            hexList = Array(tbc.neutralHexList[0...2])
+//        }
         
         // Parse heart rate and update label
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
@@ -67,8 +113,6 @@ class ViewController: UIViewController {
             while true {
                 if self.isDemoOn {
                     for (i, demoCurrentHr) in self.demoHeartRateArray.enumerated() {
-                        
-                        
                         if !self.isDemoOn {
                             break
                         }
