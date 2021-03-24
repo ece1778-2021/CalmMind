@@ -63,6 +63,7 @@ extension MusicLibraryViewController: UITableViewDataSource {
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
         cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "
         cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
+//        cell.bpmLabel?.clipsToBounds = true
         return cell
         
     }

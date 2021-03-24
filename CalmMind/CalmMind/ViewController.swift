@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var hexList = [String]()
     var isDemoOn = false
     var demoHeartRateArray = [100, 90, 80, 70, 60, 50]
-    var playbackspeedArray = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5]
+    var playbackspeedArray = [1.0, 0.95, 0.9, 0.85, 0.8, 0.7]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +51,14 @@ class ViewController: UIViewController {
             songList = Array(tbc.happySongList[0...2])
             bpmList = Array(tbc.happyBPMList[0...2])
             hexList = Array(tbc.happyHexList[0...2])
-        } else {
+        } else if tbc.currentMoodIndex == 1 {
             songList = Array(tbc.sadSongList[0...2])
             bpmList = Array(tbc.sadBPMList[0...2])
             hexList = Array(tbc.sadHexList[0...2])
+        } else {
+            songList = Array(tbc.neutralSongList[0...2])
+            bpmList = Array(tbc.neutralBPMList[0...2])
+            hexList = Array(tbc.neutralHexList[0...2])
         }
         
         // Parse heart rate and update label
@@ -62,8 +66,6 @@ class ViewController: UIViewController {
         queue.async {
             while true {
                 if self.isDemoOn {
-
-//                    for demoCurrentHr in self.demoHeartRateArray {
                     for (i, demoCurrentHr) in self.demoHeartRateArray.enumerated() {
                         
                         
@@ -232,7 +234,7 @@ class ViewController: UIViewController {
                 secondTab.latestHeartRate = self.latestHeartRate
                 secondTab.heartRateLabel.text = String(self.latestHeartRate)
                 secondTab.playbackspeedLabel.text = String(demoCurrentPBS)
-                secondTab.audioPlayer.rate = Float(demoCurrentPBS)
+                secondTab.audioPlayer.rate = Float(demoCurrentPBS + 0.1)
             }
             
         }

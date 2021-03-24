@@ -19,7 +19,6 @@ class MusicPlayerViewController: UIViewController {
     var bpmList = [String]()
     var currentHex = ""
     var hexList = [String]()
-//    var imageList = ["galaxy", "sunset", "river", "galaxy", "sunset"]
     var timer = Timer()
     var initial_hr = 0
     var countdown = 10
@@ -45,10 +44,14 @@ class MusicPlayerViewController: UIViewController {
             songList = tbc.happySongList
             bpmList = tbc.happyBPMList
             hexList = tbc.happyHexList
-        } else {
+        } else if tbc.currentMoodIndex == 1 {
             songList = tbc.sadSongList
             bpmList = tbc.sadBPMList
             hexList = tbc.sadHexList
+        } else {
+            songList = tbc.neutralSongList
+            bpmList = tbc.neutralBPMList
+            hexList = tbc.neutralHexList
         }
         
         chooseBackgroundMusic(filename: songList[0])
