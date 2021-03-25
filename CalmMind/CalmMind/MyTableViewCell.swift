@@ -12,6 +12,7 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet var imageview: UIImageView!
     @IBOutlet var songnameLabel: UILabel!
     @IBOutlet var bpmLabel: UILabel!
+    @IBOutlet weak var bestMatchIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

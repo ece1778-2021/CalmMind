@@ -26,8 +26,9 @@ class ViewController: UIViewController {
     var bpmList = [String]()
     var hexList = [String]()
     var isDemoOn = false
-    var demoHeartRateArray = [100, 90, 80, 70, 60, 50]
-    var playbackspeedArray = [1.0, 0.95, 0.9, 0.85, 0.8, 0.7]
+    var demoHeartRateArray = [101, 105, 81, 83, 80, 69, 71, 65, 61, 53, 51, 50]
+    var playbackspeedArray = [1.0, 1.0, 0.9, 0.9, 0.9, 0.85, 0.85, 0.85, 0.8, 0.8, 0.75, 0.75]
+    var bestMatchStarArray = [Bool]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class ViewController: UIViewController {
         
         // Authorizing for the HealthKit
         authorizeHealthkit()
+        
+        // Animating the heart image view
+        animate_heart()
         
         // Change and display mood
         let tbc = self.tabBarController as! BaseTabBarController
@@ -60,6 +64,8 @@ class ViewController: UIViewController {
             bpmList = tbc.neutralBPMList
             hexList = tbc.neutralHexList
         }
+        
+        bestMatchStarArray = [Bool](repeating: true, count: songList.count)
         
         // Get best 3 tracks
         // Get first hr
@@ -90,22 +96,27 @@ class ViewController: UIViewController {
                 self.bpmList = Array(self.bpmList[start...end])
                 self.hexList = Array(self.hexList[start...end])
                 self.mytableView.reloadData()
+                
+                // Find best match track and set 'Star'
+                if abs(Int(self.bpmList[0])! - self.latestHeartRate) < abs(Int(self.bpmList[1])! - self.latestHeartRate) {
+                    if abs(Int(self.bpmList[0])! - self.latestHeartRate) < abs(Int(self.bpmList[2])! - self.latestHeartRate) {
+                        self.bestMatchStarArray[0] = false
+                    } else {
+                        self.bestMatchStarArray[2] = false
+                    }
+                } else if abs(Int(self.bpmList[1])! - self.latestHeartRate) < abs(Int(self.bpmList[0])! - self.latestHeartRate) {
+                    if abs(Int(self.bpmList[1])! - self.latestHeartRate) < abs(Int(self.bpmList[2])! - self.latestHeartRate) {
+                        self.bestMatchStarArray[1] = false
+                    } else {
+                        self.bestMatchStarArray[2] = false
+                    }
+                    
+                } else {
+                    self.bestMatchStarArray[0] = false
+                    self.bestMatchStarArray[1] = false
+                }
             }
         }
-        
-//        if tbc.currentMoodIndex == 0 {
-//            songList = Array(tbc.happySongList[0...2])
-//            bpmList = Array(tbc.happyBPMList[0...2])
-//            hexList = Array(tbc.happyHexList[0...2])
-//        } else if tbc.currentMoodIndex == 1 {
-//            songList = Array(tbc.sadSongList[0...2])
-//            bpmList = Array(tbc.sadBPMList[0...2])
-//            hexList = Array(tbc.sadHexList[0...2])
-//        } else {
-//            songList = Array(tbc.neutralSongList[0...2])
-//            bpmList = Array(tbc.neutralBPMList[0...2])
-//            hexList = Array(tbc.neutralHexList[0...2])
-//        }
         
         // Parse heart rate and update label
         let queue = DispatchQueue(label: "maintenance", qos: .utility)
@@ -117,7 +128,7 @@ class ViewController: UIViewController {
                             break
                         }
                         self.updateHrDemoMode(demoCurrentHr: demoCurrentHr, demoCurrentPBS: self.playbackspeedArray[i])
-                        sleep(2)
+                        sleep(5)
                     }
                     
                 } else {
@@ -128,8 +139,7 @@ class ViewController: UIViewController {
             }
         }
         
-        // Animating the heart image view
-        animate_heart()
+        
         
         let nib = UINib(nibName: "MyTableViewCell", bundle: nil)
         mytableView.register(nib, forCellReuseIdentifier: "MyTableViewCell")
@@ -151,7 +161,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+
         if lastHeartRate != 0 {
             animate_heart()
         }
@@ -292,7 +302,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you tapped me!")
         tableView.deselectRow(at: indexPath, animated: true)
-        print(songList[indexPath.row], bpmList[indexPath.row])
+//        print(songList[indexPath.row], bpmList[indexPath.row])
         
     }
 }
@@ -306,12 +316,13 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath) as! MyTableViewCell
-        // ???
+
         cell.imageview.image = UIImage(named: hexList[indexPath.row])
         cell.songnameLabel.text = songList[indexPath.row]
         cell.songnameLabel?.font = UIFont(name: "Helvetica", size: 18)
         cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "
         cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
+        cell.bestMatchIcon?.isHidden = bestMatchStarArray[indexPath.row]
         return cell
         
     }

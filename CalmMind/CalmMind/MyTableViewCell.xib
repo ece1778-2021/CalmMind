@@ -17,12 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="432" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-tx-oGD">
-                        <rect key="frame" x="90" y="10" width="108" height="26.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="Yh5-6T-pXd">
                         <rect key="frame" x="0.0" y="10" width="80" height="80"/>
                         <constraints>
@@ -30,28 +24,45 @@
                             <constraint firstAttribute="width" constant="80" id="xP0-xu-TUS"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybG-tx-oGD">
+                        <rect key="frame" x="100" y="10" width="108" height="26.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-i5-Ty1">
-                        <rect key="frame" x="90" y="41.5" width="36" height="20.5"/>
+                        <rect key="frame" x="100" y="44.5" width="36" height="20.5"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KJK-DP-BjS">
+                        <rect key="frame" x="100" y="72.5" width="20" height="20"/>
+                        <color key="tintColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Zt5-i1-7Ry"/>
+                            <constraint firstAttribute="height" constant="20" id="o12-gg-mAo"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.89606964010000001" blue="0.96368488450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="Rdf-i5-Ty1" firstAttribute="top" secondItem="ybG-tx-oGD" secondAttribute="bottom" constant="5" id="AYH-uL-aqv"/>
-                    <constraint firstItem="ybG-tx-oGD" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="10" id="Hvm-G6-TUk"/>
+                    <constraint firstItem="ybG-tx-oGD" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="20" id="0jh-7U-gzk"/>
+                    <constraint firstItem="Rdf-i5-Ty1" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="20" id="84Y-c0-UcH"/>
+                    <constraint firstItem="KJK-DP-BjS" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="20" id="KC8-TB-yGb"/>
                     <constraint firstAttribute="bottom" secondItem="Yh5-6T-pXd" secondAttribute="bottom" constant="10" id="Ldb-Dl-N72"/>
-                    <constraint firstItem="ybG-tx-oGD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N7d-rM-bzK"/>
                     <constraint firstItem="Yh5-6T-pXd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QfB-hN-yPf"/>
+                    <constraint firstItem="KJK-DP-BjS" firstAttribute="top" secondItem="Rdf-i5-Ty1" secondAttribute="bottom" constant="8" id="UjO-jB-gnL"/>
+                    <constraint firstItem="ybG-tx-oGD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Www-me-MmV"/>
+                    <constraint firstItem="Rdf-i5-Ty1" firstAttribute="top" secondItem="ybG-tx-oGD" secondAttribute="bottom" constant="8" id="Y3V-lN-3I5"/>
                     <constraint firstItem="Yh5-6T-pXd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bWH-pE-IJ6"/>
-                    <constraint firstItem="Rdf-i5-Ty1" firstAttribute="leading" secondItem="Yh5-6T-pXd" secondAttribute="trailing" constant="10" id="qd0-od-jQm"/>
                     <constraint firstItem="Yh5-6T-pXd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zhO-iY-hFH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bestMatchIcon" destination="KJK-DP-BjS" id="WgP-iD-4Mi"/>
                 <outlet property="bpmLabel" destination="Rdf-i5-Ty1" id="bWe-ur-gdI"/>
                 <outlet property="imageview" destination="Yh5-6T-pXd" id="BQR-kb-qVr"/>
                 <outlet property="songnameLabel" destination="ybG-tx-oGD" id="Ivb-SN-ZfL"/>
@@ -61,8 +72,12 @@
     </objects>
     <resources>
         <image name="music" width="66.5" height="66.5"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

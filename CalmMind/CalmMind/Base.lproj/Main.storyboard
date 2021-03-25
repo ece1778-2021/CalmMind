@@ -200,11 +200,11 @@
                                     <constraint firstAttribute="height" constant="50" id="AAp-Y2-bfA"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calm down now..." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-tR-XGl">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calm down now..." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-tR-XGl">
                                 <rect key="frame" x="10" y="594" width="394" height="84"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -250,8 +250,8 @@
                             <constraint firstItem="6Cr-i9-7Vd" firstAttribute="top" secondItem="MBM-da-ZnQ" secondAttribute="bottom" constant="20" id="y7O-As-kfD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Player" image="music" id="zzE-xj-PjG">
-                        <inset key="imageInsets" minX="8" minY="18" maxX="8" maxY="18"/>
+                    <tabBarItem key="tabBarItem" title="Player" image="music" selectedImage="music" id="zzE-xj-PjG">
+                        <inset key="imageInsets" minX="8" minY="20" maxX="8" maxY="18"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="countDownLabel" destination="2dC-tR-XGl" id="iXU-dX-wmT"/>
@@ -511,7 +511,7 @@
                             <constraint firstItem="5bv-22-dtw" firstAttribute="top" secondItem="62C-PO-FRy" secondAttribute="bottom" constant="20" id="zLd-1z-3iC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="heart" selectedImage="heart" id="dTz-qd-Bcy">
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="homekit" catalog="system" selectedImage="homekit" id="dTz-qd-Bcy">
                         <inset key="imageInsets" minX="8" minY="18" maxX="8" maxY="20"/>
                         <inset key="landscapeImageInsets" minX="8" minY="0.0" maxX="8" maxY="8"/>
                     </tabBarItem>
@@ -552,7 +552,7 @@
         <image name="angry-icon" width="66.5" height="66.5"/>
         <image name="backward.frame" catalog="system" width="128" height="99"/>
         <image name="forward" catalog="system" width="128" height="79"/>
-        <image name="heart" width="66.5" height="66.5"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="playpause" catalog="system" width="128" height="80"/>
