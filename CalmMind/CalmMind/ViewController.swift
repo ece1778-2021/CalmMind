@@ -7,6 +7,8 @@
 
 import UIKit
 import HealthKit
+import AVKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -309,7 +311,29 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you tapped me!")
         tableView.deselectRow(at: indexPath, animated: true)
-//        print(songList[indexPath.row], bpmList[indexPath.row])
+        print(songList[indexPath.row], bpmList[indexPath.row])
+        
+        let tbc = self.tabBarController as! BaseTabBarController
+        tbc.selectedIndex = 1
+        
+        let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
+        do {
+            secondTab.audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: songList[indexPath.row], ofType: "mp3")!))
+            secondTab.audioPlayer.prepareToPlay()
+            secondTab.audioPlayer.play()
+            
+            // Find the correct index in musicplayer
+            let indexOfSong = secondTab.songList.firstIndex(of: songList[indexPath.row])
+            
+            secondTab.currentHex = secondTab.hexList[indexOfSong!]
+            secondTab.view.backgroundColor = secondTab.hexStringToUIColor(hex: secondTab.hexList[indexOfSong!], add_rgb: 0)
+            secondTab.goodview.image = UIImage(named: secondTab.hexList[indexOfSong!])
+            
+            let tbc = self.tabBarController as! BaseTabBarController
+            tbc.selectedIndex = 1
+        } catch {
+            print(error)
+        }
         
     }
 }
