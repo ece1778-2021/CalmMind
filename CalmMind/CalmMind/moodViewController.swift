@@ -62,11 +62,12 @@ class moodViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func backAction(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController") as! BaseTabBarController
-        mainTabBarController.currentMoodIndex = currentMoodIndex
-        mainTabBarController.modalPresentationStyle = .fullScreen
-        self.present(mainTabBarController, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController") as! BaseTabBarController
+//        mainTabBarController.currentMoodIndex = currentMoodIndex
+//        mainTabBarController.modalPresentationStyle = .fullScreen
+//        self.present(mainTabBarController, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

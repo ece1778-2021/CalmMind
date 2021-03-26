@@ -81,7 +81,6 @@ class ViewController: UIViewController {
                     }
                     i += 1
                 }
-                print(i)
                 
                 var start = i - 1
                 var end = i + 1
@@ -209,6 +208,10 @@ class ViewController: UIViewController {
                 self.animate_heart()
             }
         })
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     // Authorization for the HealthKit

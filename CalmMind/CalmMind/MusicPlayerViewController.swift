@@ -71,6 +71,10 @@ class MusicPlayerViewController: UIViewController {
 //        heartRateLabel.text = String(latestHeartRate)
 //    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     func hexStringToUIColor (hex:String, add_rgb: CGFloat) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -118,10 +122,6 @@ class MusicPlayerViewController: UIViewController {
         } catch {
             print(error)
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // Alert message helper function

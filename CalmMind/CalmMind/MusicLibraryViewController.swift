@@ -33,6 +33,10 @@ class MusicLibraryViewController: UIViewController {
         view.backgroundColor = backColor
         mytableView.backgroundColor = backColor
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
 }
 
