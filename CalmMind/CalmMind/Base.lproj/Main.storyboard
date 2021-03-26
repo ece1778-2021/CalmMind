@@ -251,7 +251,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Player" image="music" selectedImage="music" id="zzE-xj-PjG">
-                        <inset key="imageInsets" minX="8" minY="20" maxX="8" maxY="18"/>
+                        <inset key="imageInsets" minX="8" minY="22" maxX="8" maxY="18"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="countDownLabel" destination="2dC-tR-XGl" id="iXU-dX-wmT"/>
@@ -319,11 +319,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pdd-nf-4qv">
-                                <rect key="frame" x="57" y="277.5" width="300" height="400"/>
+                                <rect key="frame" x="107" y="217.5" width="200" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="m0E-lY-tHh"/>
-                                    <constraint firstAttribute="width" constant="300" id="pxa-Cg-czA"/>
+                                    <constraint firstAttribute="height" constant="600" id="m0E-lY-tHh"/>
+                                    <constraint firstAttribute="width" constant="200" id="pxa-Cg-czA"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nov-ND-xUO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -333,7 +333,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="cqX-gc-crx" customClass="myCollectionViewCell" customModule="CalmMind" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                                        <rect key="frame" x="40" y="0.0" width="120" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PuQ-kJ-V6I">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
@@ -373,22 +373,34 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are you feeling now?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zve-kz-dkV">
-                                <rect key="frame" x="40.5" y="174" width="333" height="33.5"/>
+                                <rect key="frame" x="40.5" y="144" width="333" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wf6-Ab-4lE">
+                                <rect key="frame" x="30" y="74" width="26" height="22"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="arrowshape.turn.up.backward" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="backActionWithSender:" destination="vVK-8M-3yg" eventType="touchUpInside" id="xLG-oF-NnJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QK2-C7-TNf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pdd-nf-4qv" firstAttribute="centerX" secondItem="axt-xb-TUg" secondAttribute="centerX" id="1ep-rQ-Kof"/>
-                            <constraint firstItem="pdd-nf-4qv" firstAttribute="top" secondItem="Zve-kz-dkV" secondAttribute="bottom" constant="70" id="4Lm-n1-sjY"/>
+                            <constraint firstItem="pdd-nf-4qv" firstAttribute="top" secondItem="Zve-kz-dkV" secondAttribute="bottom" constant="40" id="4Lm-n1-sjY"/>
+                            <constraint firstItem="wf6-Ab-4lE" firstAttribute="top" secondItem="QK2-C7-TNf" secondAttribute="top" constant="30" id="BQd-Le-Yec"/>
+                            <constraint firstItem="wf6-Ab-4lE" firstAttribute="leading" secondItem="QK2-C7-TNf" secondAttribute="leading" constant="30" id="CZK-mt-9gv"/>
                             <constraint firstItem="Zve-kz-dkV" firstAttribute="centerX" secondItem="axt-xb-TUg" secondAttribute="centerX" id="KbD-6G-10b"/>
-                            <constraint firstItem="Zve-kz-dkV" firstAttribute="top" secondItem="QK2-C7-TNf" secondAttribute="top" constant="130" id="Mjd-ql-kup"/>
+                            <constraint firstItem="Zve-kz-dkV" firstAttribute="top" secondItem="QK2-C7-TNf" secondAttribute="top" constant="100" id="Mjd-ql-kup"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="wf6-Ab-4lE" id="eP3-Wk-mL1"/>
                         <outlet property="myCollectionView" destination="pdd-nf-4qv" id="AmI-ee-AdU"/>
                     </connections>
                 </viewController>
@@ -550,6 +562,7 @@
     <resources>
         <image name="HEART RATE" width="66.5" height="66.5"/>
         <image name="angry-icon" width="66.5" height="66.5"/>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="backward.frame" catalog="system" width="128" height="99"/>
         <image name="forward" catalog="system" width="128" height="79"/>
         <image name="homekit" catalog="system" width="128" height="106"/>

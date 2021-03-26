@@ -21,13 +21,13 @@ class ViewController: UIViewController {
     var lastHeartRate : Int = 0
     var latestHeartRate : Int = 0
     let moodArray = ["Happy", "Sad", "Neutral"]
-    let moodImageArray = ["happy-icon", "sad-icon", "crazy-icon"]
+    let moodImageArray = ["happy-icon", "sad-icon", "neutral-icon"]
     var songList = [String]()
     var bpmList = [String]()
     var hexList = [String]()
     var isDemoOn = false
-    var demoHeartRateArray = [101, 105, 81, 83, 80, 69, 71, 65, 61, 53, 51, 50]
-    var playbackspeedArray = [1.0, 1.0, 0.9, 0.9, 0.9, 0.85, 0.85, 0.85, 0.8, 0.8, 0.75, 0.75]
+    var demoHeartRateArray = [101, 105, 81, 83, 80, 69, 71, 65, 61, 53, 51, 50, 52, 51, 50, 52]
+    var playbackspeedArray = [1.0, 1.0, 0.9, 0.9, 0.9, 0.85, 0.85, 0.85, 0.8, 0.8, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75]
     var bestMatchStarArray = [Bool]()
     
     override func viewDidLoad() {
@@ -176,8 +176,12 @@ class ViewController: UIViewController {
         let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
         secondTab.audioPlayer.stop()
         
+        let tbc = self.tabBarController as! BaseTabBarController
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "mood_vc") as! moodViewController
+        controller.currentMoodIndex = tbc.currentMoodIndex
+        controller.backButtonHidden = false
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
         
