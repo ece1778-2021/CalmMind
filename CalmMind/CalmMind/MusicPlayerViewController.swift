@@ -27,11 +27,13 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var lastButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var timerButton: UIButton!
     @IBOutlet weak var goodview: UIImageView!
     @IBOutlet var heartRateLabel: UILabel!
     @IBOutlet var playbackspeedLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,6 +162,20 @@ class MusicPlayerViewController: UIViewController {
         } else {
             audioPlayer.play()
         }
+        countDownLabel.text = "Calm down now..."
+    }
+    
+    @IBAction func lastButtonAction(_ sender: Any) {
+        
+        animateClickButton(click_button: self.lastButton)
+        
+        let indexOfSong = songList.firstIndex(of: currentSong)
+        let nextSongIndex = (indexOfSong! - 1 + songList.count) % songList.count
+        let nextSong = songList[nextSongIndex]
+        
+        animateChangeImageView(songName: nextSong)
+        chooseBackgroundMusic(filename: nextSong)
+        audioPlayer.play()
         countDownLabel.text = "Calm down now..."
     }
     
