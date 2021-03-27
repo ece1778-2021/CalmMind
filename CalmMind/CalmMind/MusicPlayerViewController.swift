@@ -48,6 +48,8 @@ class MusicPlayerViewController: UIViewController {
         
         chooseBackgroundMusic(filename: songList[0])
         countDownLabel.text = "Calm down now..."
+        countDownLabel.layer.cornerRadius = 10
+        countDownLabel.layer.masksToBounds = true
         
         currentHex = hexList[0]
         view.backgroundColor = hexStringToUIColor(hex: hexList[0], add_rgb: 0)
