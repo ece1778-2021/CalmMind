@@ -17,6 +17,11 @@
 		8538B96925EFC2E500301316 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */; };
 		853E0A1C26051F4700D2A1F1 /* moodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E0A1B26051F4700D2A1F1 /* moodViewController.swift */; };
 		853E0A252605257D00D2A1F1 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */; };
+		8559DD76260EB50700AE63DF /* Nocturne in E Flat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8559DD75260EB50700AE63DF /* Nocturne in E Flat.mp3 */; };
+		8559DD79260EB51300AE63DF /* Songs without Words.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8559DD78260EB51300AE63DF /* Songs without Words.mp3 */; };
+		8559DD7C260EB55E00AE63DF /* Nocturne in a Minor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8559DD7B260EB55E00AE63DF /* Nocturne in a Minor.mp3 */; };
+		8559DD80260EB56B00AE63DF /* Nocturne Op. 48 No. 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8559DD7E260EB56B00AE63DF /* Nocturne Op. 48 No. 2.mp3 */; };
+		8559DD81260EB56B00AE63DF /* Nocturne Op. 48 No. 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8559DD7F260EB56B00AE63DF /* Nocturne Op. 48 No. 1.mp3 */; };
 		856CC9DB25EE9E8600171D57 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 856CC9DA25EE9E8600171D57 /* HealthKit.framework */; };
 		8585D8EF25F1542F0038F2FF /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */; };
 		8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8585D8EE25F1542F0038F2FF /* MyTableViewCell.xib */; };
@@ -26,8 +31,6 @@
 		85DAC293260A45D800F93384 /* Sparkle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28B260A45D800F93384 /* Sparkle.mp3 */; };
 		85DAC294260A45D800F93384 /* 1-01 sleeping bag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28C260A45D800F93384 /* 1-01 sleeping bag.mp3 */; };
 		85DAC295260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28D260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 */; };
-		85DAC296260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28E260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 */; };
-		85DAC297260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC28F260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 */; };
 		85DAC298260A45D800F93384 /* Sunlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC290260A45D800F93384 /* Sunlight.mp3 */; };
 		85DAC29D260A5F5000F93384 /* Calm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC29A260A5F5000F93384 /* Calm.mp3 */; };
 		85DAC29E260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85DAC29B260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 */; };
@@ -47,6 +50,11 @@
 		8538B96825EFC2E500301316 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		853E0A1B26051F4700D2A1F1 /* moodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodViewController.swift; sourceTree = "<group>"; };
 		853E0A232605257D00D2A1F1 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
+		8559DD75260EB50700AE63DF /* Nocturne in E Flat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nocturne in E Flat.mp3"; sourceTree = "<group>"; };
+		8559DD78260EB51300AE63DF /* Songs without Words.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Songs without Words.mp3"; sourceTree = "<group>"; };
+		8559DD7B260EB55E00AE63DF /* Nocturne in a Minor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nocturne in a Minor.mp3"; sourceTree = "<group>"; };
+		8559DD7E260EB56B00AE63DF /* Nocturne Op. 48 No. 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nocturne Op. 48 No. 2.mp3"; sourceTree = "<group>"; };
+		8559DD7F260EB56B00AE63DF /* Nocturne Op. 48 No. 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nocturne Op. 48 No. 1.mp3"; sourceTree = "<group>"; };
 		856CC9D825EE9E8600171D57 /* CalmMind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalmMind.entitlements; sourceTree = "<group>"; };
 		856CC9DA25EE9E8600171D57 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8585D8ED25F1542F0038F2FF /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,8 +65,6 @@
 		85DAC28B260A45D800F93384 /* Sparkle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sparkle.mp3; sourceTree = "<group>"; };
 		85DAC28C260A45D800F93384 /* 1-01 sleeping bag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1-01 sleeping bag.mp3"; sourceTree = "<group>"; };
 		85DAC28D260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1-04 Moonlight Serenade.mp3"; sourceTree = "<group>"; };
-		85DAC28E260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chopin - Nocturne in E Flat.mp3"; sourceTree = "<group>"; };
-		85DAC28F260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mendelssohn - Songs without Words.mp3"; sourceTree = "<group>"; };
 		85DAC290260A45D800F93384 /* Sunlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sunlight.mp3; sourceTree = "<group>"; };
 		85DAC29A260A5F5000F93384 /* Calm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Calm.mp3; sourceTree = "<group>"; };
 		85DAC29B260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1-01 Unbraiding the Sun.mp3"; sourceTree = "<group>"; };
@@ -128,14 +134,17 @@
 		8585347225F7988C00600A0A /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				8559DD7F260EB56B00AE63DF /* Nocturne Op. 48 No. 1.mp3 */,
+				8559DD7E260EB56B00AE63DF /* Nocturne Op. 48 No. 2.mp3 */,
+				8559DD7B260EB55E00AE63DF /* Nocturne in a Minor.mp3 */,
+				8559DD78260EB51300AE63DF /* Songs without Words.mp3 */,
+				8559DD75260EB50700AE63DF /* Nocturne in E Flat.mp3 */,
 				85DAC29B260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 */,
 				85DAC29A260A5F5000F93384 /* Calm.mp3 */,
 				85DAC29C260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 */,
 				85DAC28C260A45D800F93384 /* 1-01 sleeping bag.mp3 */,
 				85DAC28D260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 */,
 				85DAC289260A45D800F93384 /* 1-07 Song On The Beach.mp3 */,
-				85DAC28E260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 */,
-				85DAC28F260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 */,
 				85DAC28A260A45D800F93384 /* Ocean.mp3 */,
 				85DAC28B260A45D800F93384 /* Sparkle.mp3 */,
 				85DAC290260A45D800F93384 /* Sunlight.mp3 */,
@@ -200,21 +209,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8559DD80260EB56B00AE63DF /* Nocturne Op. 48 No. 2.mp3 in Resources */,
+				8559DD7C260EB55E00AE63DF /* Nocturne in a Minor.mp3 in Resources */,
 				85DAC29F260A5F5000F93384 /* RÃªverie, L. 68_ Reverie.mp3 in Resources */,
 				85DAC295260A45D800F93384 /* 1-04 Moonlight Serenade.mp3 in Resources */,
 				1ECC237725E6CAE4000B620D /* LaunchScreen.storyboard in Resources */,
 				85DAC293260A45D800F93384 /* Sparkle.mp3 in Resources */,
 				1ECC237425E6CAE4000B620D /* Assets.xcassets in Resources */,
+				8559DD76260EB50700AE63DF /* Nocturne in E Flat.mp3 in Resources */,
 				85DAC298260A45D800F93384 /* Sunlight.mp3 in Resources */,
 				85DAC294260A45D800F93384 /* 1-01 sleeping bag.mp3 in Resources */,
+				8559DD81260EB56B00AE63DF /* Nocturne Op. 48 No. 1.mp3 in Resources */,
 				85DAC291260A45D800F93384 /* 1-07 Song On The Beach.mp3 in Resources */,
-				85DAC296260A45D800F93384 /* Chopin - Nocturne in E Flat.mp3 in Resources */,
 				85DAC29D260A5F5000F93384 /* Calm.mp3 in Resources */,
 				1ECC237225E6CAE0000B620D /* Main.storyboard in Resources */,
 				85DAC29E260A5F5000F93384 /* 1-01 Unbraiding the Sun.mp3 in Resources */,
-				85DAC297260A45D800F93384 /* Mendelssohn - Songs without Words.mp3 in Resources */,
 				8585D8F025F1542F0038F2FF /* MyTableViewCell.xib in Resources */,
 				85DAC292260A45D800F93384 /* Ocean.mp3 in Resources */,
+				8559DD79260EB51300AE63DF /* Songs without Words.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
