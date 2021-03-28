@@ -124,9 +124,10 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="VZD-fh-8c9"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                         <state key="normal">
                                             <color key="titleColor" systemColor="labelColor"/>
-                                            <imageReference key="image" image="backward.frame" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="ic_replay" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -146,7 +147,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <imageReference key="image" image="backward" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -165,7 +166,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <imageReference key="image" image="playpause" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -184,7 +185,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <imageReference key="image" image="forward" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -203,7 +204,7 @@
                                         </constraints>
                                         <state key="normal">
                                             <imageReference key="image" image="timer" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -589,10 +590,10 @@
         <image name="angry-icon" width="66.5" height="66.5"/>
         <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="backward" catalog="system" width="128" height="79"/>
-        <image name="backward.frame" catalog="system" width="128" height="99"/>
         <image name="forward" catalog="system" width="128" height="79"/>
         <image name="heart-beat" width="66.5" height="66.5"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="ic_replay" width="66.5" height="66.5"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="playpause" catalog="system" width="128" height="80"/>

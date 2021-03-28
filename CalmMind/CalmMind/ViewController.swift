@@ -28,8 +28,8 @@ class ViewController: UIViewController {
     var bpmList = [String]()
     var hexList = [String]()
     var isDemoOn = false
-    var demoHeartRateArray = [101, 105, 81, 83, 80, 69, 71, 65, 61, 53, 51, 50, 52, 51, 50, 52]
-    var playbackspeedArray = [1.0, 1.0, 0.9, 0.9, 0.9, 0.85, 0.85, 0.85, 0.8, 0.8, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75]
+    var demoHeartRateArray = [101, 105, 81, 83, 80, 69, 71, 65, 61, 53, 51, 40, 38, 48, 50, 46]
+    var playbackspeedArray = [1.0, 1.0, 0.95, 0.95, 0.95, 0.9, 0.9, 0.9, 0.85, 0.85, 0.8, 0.75, 0.75, 0.75, 0.75, 0.75]
     var bestMatchStarArray = [Bool]()
     
     override func viewDidLoad() {
@@ -355,9 +355,6 @@ extension ViewController: UITableViewDataSource {
         cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "
         cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
         cell.bestMatchIcon?.isHidden = bestMatchStarArray[indexPath.row]
-        
-        print(songList)
-        print(hexList)
         return cell
         
     }
