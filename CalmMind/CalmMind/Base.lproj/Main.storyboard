@@ -165,7 +165,7 @@
                                             <constraint firstAttribute="width" constant="50" id="FJc-bQ-bmi"/>
                                         </constraints>
                                         <state key="normal">
-                                            <imageReference key="image" image="playpause" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="play" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -596,7 +596,7 @@
         <image name="ic_replay" width="66.5" height="66.5"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
-        <image name="playpause" catalog="system" width="128" height="80"/>
+        <image name="play" catalog="system" width="120" height="128"/>
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <image name="sunset" width="166.5" height="250"/>
         <image name="timer" catalog="system" width="128" height="121"/>

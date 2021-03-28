@@ -23,6 +23,7 @@ class MusicPlayerViewController: UIViewController {
     var initial_hr = 0
     var countdown = 10
     var latestHeartRate : Int = 200
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .semibold, scale: .large)
     
     @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
@@ -146,11 +147,13 @@ class MusicPlayerViewController: UIViewController {
         
         if audioPlayer.isPlaying {
             audioPlayer.pause()
+            playButton.setImage(UIImage(systemName: "play", withConfiguration: largeConfig), for: .normal)
             print("pausing")
         } else {
             audioPlayer.play()
             print("playing")
             countDownLabel.text = "Calm down now..."
+            playButton.setImage(UIImage(systemName: "pause", withConfiguration: largeConfig), for: .normal)
         }
     }
     
