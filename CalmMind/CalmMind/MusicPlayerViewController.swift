@@ -23,7 +23,8 @@ class MusicPlayerViewController: UIViewController {
     var initial_hr = 0
     var countdown = 10
     var latestHeartRate : Int = 200
-    let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .semibold, scale: .large)
+//    let largeConfig = UIImage.SymbolConfiguration(pointSize: 70, weight: .semibold, scale: .large)
+    var largeConfig = UIImage.SymbolConfiguration(scale: .large)
     
     @IBOutlet var countDownLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
@@ -138,6 +139,7 @@ class MusicPlayerViewController: UIViewController {
     // Execute the commands when time is up
     @objc func fireTimer() {
         audioPlayer.stop()
+        playButton.setImage(UIImage(systemName: "play", withConfiguration: largeConfig), for: .normal)
         sendAlert(alertMsg: "Music has stopped..")
     }
     
@@ -164,8 +166,10 @@ class MusicPlayerViewController: UIViewController {
         if audioPlayer.isPlaying {
             audioPlayer.currentTime = 0
             audioPlayer.play()
+            playButton.setImage(UIImage(systemName: "pause", withConfiguration: largeConfig), for: .normal)
         } else {
             audioPlayer.play()
+            playButton.setImage(UIImage(systemName: "pause", withConfiguration: largeConfig), for: .normal)
         }
         countDownLabel.text = "Calm down now..."
     }
@@ -181,6 +185,7 @@ class MusicPlayerViewController: UIViewController {
         animateChangeImageView(songName: nextSong)
         chooseBackgroundMusic(filename: nextSong)
         audioPlayer.play()
+        playButton.setImage(UIImage(systemName: "pause", withConfiguration: largeConfig), for: .normal)
         countDownLabel.text = "Calm down now..."
     }
     
@@ -195,6 +200,7 @@ class MusicPlayerViewController: UIViewController {
         animateChangeImageView(songName: nextSong)
         chooseBackgroundMusic(filename: nextSong)
         audioPlayer.play()
+        playButton.setImage(UIImage(systemName: "pause", withConfiguration: largeConfig), for: .normal)
         countDownLabel.text = "Calm down now..."
     }
     
@@ -305,6 +311,7 @@ extension MusicPlayerViewController: ChangeSongDelegate {
             self.chooseBackgroundMusic(filename: songName)
             self.animateChangeImageView(songName: songName)
             self.audioPlayer.play()
+            self.playButton.setImage(UIImage(systemName: "pause", withConfiguration: self.largeConfig), for: .normal)
             self.countDownLabel.text = "Calm down now..."
         }
     }

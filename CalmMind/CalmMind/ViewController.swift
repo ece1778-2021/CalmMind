@@ -176,6 +176,7 @@ class ViewController: UIViewController {
         // Stop the music
         let secondTab = (self.tabBarController?.viewControllers![1])! as! MusicPlayerViewController
         secondTab.audioPlayer.stop()
+        secondTab.playButton.setImage(UIImage(systemName: "play", withConfiguration: secondTab.largeConfig), for: .normal)
         
         let tbc = self.tabBarController as! BaseTabBarController
         
@@ -322,6 +323,7 @@ extension ViewController: UITableViewDelegate {
             secondTab.audioPlayer.numberOfLoops = 20
             secondTab.audioPlayer.volume = 0.2
             secondTab.audioPlayer.play()
+            secondTab.playButton.setImage(UIImage(systemName: "pause", withConfiguration: secondTab.largeConfig), for: .normal)
             
             // Find the correct index in musicplayer
             let indexOfSong = secondTab.songList.firstIndex(of: songList[indexPath.row])
