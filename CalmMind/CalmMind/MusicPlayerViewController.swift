@@ -97,7 +97,7 @@ class MusicPlayerViewController: UIViewController {
             audioPlayer.numberOfLoops = 20
             audioPlayer.enableRate = true
 //            audioPlayer.rate = 1.0
-            audioPlayer.volume = 1.0
+            audioPlayer.volume = 0.2
             currentSong = filename
         }
         catch {

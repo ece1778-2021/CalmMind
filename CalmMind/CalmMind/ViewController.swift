@@ -320,6 +320,7 @@ extension ViewController: UITableViewDelegate {
             secondTab.audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: songList[indexPath.row], ofType: "mp3")!))
             secondTab.audioPlayer.prepareToPlay()
             secondTab.audioPlayer.numberOfLoops = 20
+            secondTab.audioPlayer.volume = 0.2
             secondTab.audioPlayer.play()
             
             // Find the correct index in musicplayer
@@ -354,6 +355,9 @@ extension ViewController: UITableViewDataSource {
         cell.bpmLabel.text = " " + bpmList[indexPath.row] + " BPM "
         cell.bpmLabel?.font = UIFont(name: "Helvetica", size: 16)
         cell.bestMatchIcon?.isHidden = bestMatchStarArray[indexPath.row]
+        
+        print(songList)
+        print(hexList)
         return cell
         
     }
