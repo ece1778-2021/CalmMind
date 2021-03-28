@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     var bpmList = [String]()
     var hexList = [String]()
     var isDemoOn = false
-    var demoHeartRateArray = [101, 100, 105, 81, 83, 80, 69, 71, 65, 61, 53, 51, 40, 38, 48, 50, 46]
+    var demoHeartRateArray = [101, 100, 112, 81, 83, 80, 69, 71, 65, 61, 53, 51, 40, 38, 48, 50, 46]
     var playbackspeedArray = [1.0, 1.0, 1.0, 0.95, 0.95, 0.95, 0.9, 0.9, 0.9, 0.85, 0.85, 0.8, 0.75, 0.75, 0.75, 0.75, 0.75]
     var bestMatchStarArray = [Bool]()
     
