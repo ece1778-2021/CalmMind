@@ -457,7 +457,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="W8M-Fm-4hU"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="HEART RATE" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-hQ-tyK">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart-beat" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-hQ-tyK">
                                                         <rect key="frame" x="0.0" y="50" width="131" height="80"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="0bK-IS-hbO"/>
@@ -586,12 +586,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HEART RATE" width="66.5" height="66.5"/>
         <image name="angry-icon" width="66.5" height="66.5"/>
         <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="backward" catalog="system" width="128" height="79"/>
         <image name="backward.frame" catalog="system" width="128" height="99"/>
         <image name="forward" catalog="system" width="128" height="79"/>
+        <image name="heart-beat" width="66.5" height="66.5"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="music.note" catalog="system" width="97" height="128"/>

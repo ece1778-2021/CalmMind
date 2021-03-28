@@ -303,7 +303,6 @@ class ViewController: UIViewController {
         }
     }
 
-
 }
 
 extension ViewController: UITableViewDelegate {
@@ -320,6 +319,7 @@ extension ViewController: UITableViewDelegate {
         do {
             secondTab.audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: songList[indexPath.row], ofType: "mp3")!))
             secondTab.audioPlayer.prepareToPlay()
+            secondTab.audioPlayer.numberOfLoops = 20
             secondTab.audioPlayer.play()
             
             // Find the correct index in musicplayer
