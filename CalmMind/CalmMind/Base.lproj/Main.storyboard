@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" translatesAutoresizingMaskIntoConstraints="NO" id="fil-OK-hlD">
-                                <rect key="frame" x="10" y="44" width="394" height="545"/>
+                                <rect key="frame" x="10" y="44" width="394" height="519.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -27,10 +27,54 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-8V-n9R" userLabel="State Stack View">
-                                <rect key="frame" x="232" y="54" width="162" height="35"/>
+                                <rect key="frame" x="82" y="54" width="312" height="35"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn3-c6-Ltk">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6Dv-cK-jHP"/>
+                                            <constraint firstAttribute="width" constant="35" id="mXA-MJ-kuW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="demoIncreaseHr" destination="kcx-gX-dFh" eventType="touchUpInside" id="2Pt-oo-sDf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5m-ev-rEd">
+                                        <rect key="frame" x="45" y="0.0" width="35" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Nb0-ex-Lhz"/>
+                                            <constraint firstAttribute="width" constant="35" id="reg-oS-gsd"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <imageReference key="image" image="minus" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="17.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="demoDecreaseHr" destination="kcx-gX-dFh" eventType="touchUpInside" id="haq-pv-Ezc"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-eb-z97">
+                                        <rect key="frame" x="90" y="0.0" width="51" height="35"/>
+                                    </switch>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vgj-J0-MwV" userLabel="Heart Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="35"/>
+                                        <rect key="frame" x="149" y="0.0" width="85" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZL3-vH-Ck8">
                                                 <rect key="frame" x="0.0" y="0.0" width="1" height="35"/>
@@ -50,15 +94,18 @@
                                                 </constraints>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-L0-0M0">
-                                                <rect key="frame" x="46" y="0.0" width="41.5" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-L0-0M0">
+                                                <rect key="frame" x="46" y="0.0" width="32" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="nFY-FP-KfV"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUp-m6-bCN">
-                                                <rect key="frame" x="92.5" y="0.0" width="2" height="35"/>
+                                                <rect key="frame" x="83" y="0.0" width="2" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="2" id="1Ry-hf-IkR"/>
                                                 </constraints>
@@ -75,7 +122,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6NP-Gf-gLu" userLabel="PBS Stack View">
-                                        <rect key="frame" x="104.5" y="0.0" width="57.5" height="35"/>
+                                        <rect key="frame" x="244" y="0.0" width="68" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLF-sk-Va0">
                                                 <rect key="frame" x="0.0" y="0.0" width="2" height="35"/>
@@ -90,14 +137,14 @@
                                                 <rect key="frame" x="7" y="-1.5" width="17" height="38.5"/>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHB-tl-kC0">
-                                                <rect key="frame" x="29" y="0.0" width="21.5" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHB-tl-kC0">
+                                                <rect key="frame" x="29" y="0.0" width="32" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPe-qs-zmC">
-                                                <rect key="frame" x="55.5" y="0.0" width="2" height="35"/>
+                                                <rect key="frame" x="66" y="0.0" width="2" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="2" id="bn4-ud-xUY"/>
                                                 </constraints>
@@ -220,8 +267,8 @@
                                     <constraint firstAttribute="height" constant="50" id="AAp-Y2-bfA"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calm down now..." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-tR-XGl">
-                                <rect key="frame" x="10" y="594" width="394" height="89"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calm down now..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dC-tR-XGl">
+                                <rect key="frame" x="10" y="568.5" width="394" height="114.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,7 +304,7 @@
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="trailing" secondItem="6Cr-i9-7Vd" secondAttribute="trailing" constant="10" id="hCH-lB-IAx"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="trailing" secondItem="fil-OK-hlD" secondAttribute="trailing" constant="10" id="iEi-GK-yNN"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="trailing" secondItem="2dC-tR-XGl" secondAttribute="trailing" constant="10" id="nEu-VR-hkY"/>
-                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.608259" id="tN2-qW-d3c"/>
+                            <constraint firstItem="fil-OK-hlD" firstAttribute="height" secondItem="Dw1-Ys-6qe" secondAttribute="height" multiplier="0.58" id="tN2-qW-d3c"/>
                             <constraint firstItem="2dC-tR-XGl" firstAttribute="top" secondItem="fil-OK-hlD" secondAttribute="bottom" constant="5" id="w4W-xt-o81"/>
                             <constraint firstItem="2dC-tR-XGl" firstAttribute="leading" secondItem="CA0-Fg-XT1" secondAttribute="leading" constant="10" id="wJr-jj-sJX"/>
                             <constraint firstItem="CA0-Fg-XT1" firstAttribute="trailing" secondItem="BKt-8V-n9R" secondAttribute="trailing" constant="20" id="xdE-Vu-h6N"/>
@@ -269,10 +316,13 @@
                         <inset key="imageInsets" minX="8" minY="22" maxX="8" maxY="18"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="countDownLabel" destination="2dC-tR-XGl" id="iXU-dX-wmT"/>
+                        <outlet property="addHrButton" destination="bn3-c6-Ltk" id="94X-gM-GA4"/>
+                        <outlet property="calmLabel" destination="2dC-tR-XGl" id="VMg-X3-JJp"/>
+                        <outlet property="demoSwitch" destination="OSV-eb-z97" id="ixW-MX-oO3"/>
                         <outlet property="goodview" destination="fil-OK-hlD" id="QpI-qi-mUR"/>
                         <outlet property="heartRateLabel" destination="OPU-L0-0M0" id="iSN-YT-ETC"/>
                         <outlet property="lastButton" destination="TDC-xE-JKG" id="d6u-hn-4Q2"/>
+                        <outlet property="minusHrButton" destination="K5m-ev-rEd" id="H7l-fl-yR3"/>
                         <outlet property="nextButton" destination="nJc-Og-spz" id="0n4-Ya-aQU"/>
                         <outlet property="playButton" destination="rbY-rV-mlb" id="XYP-Nr-RQo"/>
                         <outlet property="playbackspeedLabel" destination="MHB-tl-kC0" id="Cfc-pw-00g"/>
@@ -532,17 +582,12 @@
                                     <action selector="changeMoodAction:" destination="hKA-DO-17U" eventType="touchUpInside" id="XyD-Tp-m5B"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Shm-g7-xrV">
-                                <rect key="frame" x="345" y="44" width="51" height="31"/>
-                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vbi-Sk-bKt"/>
                         <color key="backgroundColor" red="1" green="0.89606964008921486" blue="0.96368488453639956" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5bv-22-dtw" firstAttribute="leading" secondItem="Vbi-Sk-bKt" secondAttribute="leading" constant="10" id="BKa-W0-aLX"/>
                             <constraint firstItem="62C-PO-FRy" firstAttribute="top" secondItem="Vbi-Sk-bKt" secondAttribute="top" constant="40" id="EY0-ZF-hxZ"/>
-                            <constraint firstItem="Vbi-Sk-bKt" firstAttribute="trailing" secondItem="Shm-g7-xrV" secondAttribute="trailing" constant="20" id="MDK-i4-86k"/>
-                            <constraint firstItem="Shm-g7-xrV" firstAttribute="top" secondItem="Vbi-Sk-bKt" secondAttribute="top" id="RaL-2m-Mge"/>
                             <constraint firstAttribute="trailing" secondItem="62C-PO-FRy" secondAttribute="trailing" constant="20" id="arX-Tm-oYd"/>
                             <constraint firstItem="62C-PO-FRy" firstAttribute="leading" secondItem="Vbi-Sk-bKt" secondAttribute="leading" constant="20" id="hIj-0P-j0w"/>
                             <constraint firstItem="Vbi-Sk-bKt" firstAttribute="trailing" secondItem="5bv-22-dtw" secondAttribute="trailing" constant="10" id="hJp-CT-pkn"/>
@@ -555,7 +600,6 @@
                         <inset key="landscapeImageInsets" minX="8" minY="0.0" maxX="8" maxY="8"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="demoSwitch" destination="Shm-g7-xrV" id="QIA-UY-VwK"/>
                         <outlet property="heartLogo" destination="FVv-hQ-tyK" id="lZN-Gu-4QR"/>
                         <outlet property="heartRateLabel" destination="LYm-KE-ltw" id="evK-Kw-CEb"/>
                         <outlet property="moodLabel" destination="5JE-8a-4Rq" id="p4x-kg-OE3"/>
@@ -594,9 +638,11 @@
         <image name="heart-beat" width="66.5" height="66.5"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="ic_replay" width="66.5" height="66.5"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
         <image name="music" width="66.5" height="66.5"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="play" catalog="system" width="120" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <image name="sunset" width="166.5" height="250"/>
         <image name="timer" catalog="system" width="128" height="121"/>

@@ -10,7 +10,11 @@ import UIKit
 class BaseTabBarController: UITabBarController {
     
     var latestHeartRate : Int = 200
+    var firstHeartRate : Int = 200
     var currentMoodIndex : Int = 0
+    var currentPBS : Float = 1.0
+    var isDemoOn = false
+    var lowerBounded = false
     var sadSongList = ["Nocturne in a Minor", "RÃªverie, L. 68_ Reverie", "Nocturne Op. 48 No. 2", "Calm", "Nocturne Op. 48 No. 1", "1-01 Unbraiding the Sun"]
     var sadBPMList = ["69", "68", "66", "54", "51", "49"]
     var sadHexList = ["#414510", "#626932", "#5688A8", "#907717", "#82671A", "#364129"]
@@ -29,6 +33,7 @@ class BaseTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         delegate = self
     }
+    
 }
 
 // MARK: - UITabBarControllerDelegate
